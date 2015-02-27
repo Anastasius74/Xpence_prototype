@@ -1,0 +1,54 @@
+2015-02-27 14:39:28,430 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 14:40:00,953 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 14:40:28,170 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 14:40:57,362 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 14:43:39,351 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 14:44:51,671 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:02:17,622 [8] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:13:04,071 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:13:55,939 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:16:04,951 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:16:19,149 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 15:16:45,846 [8] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:16:59,965 [8] DEBUG - App.OnExit --- Application closing.
+2015-02-27 15:23:08,170 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:24:45,899 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:25:07,396 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 15:25:07,485 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 132
+2015-02-27 15:25:14,688 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 15:25:14,748 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 132
+2015-02-27 15:25:24,953 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 15:25:24,994 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 132
+2015-02-27 15:25:41,599 [10] DEBUG - App.OnExit --- Application closing.
+2015-02-27 15:26:53,762 [10] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:29:54,851 [10] DEBUG - App.OnExit --- Application closing.
+2015-02-27 15:30:38,167 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 15:30:53,945 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:34:02,303 [8] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:34:20,830 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:34:20,978 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 132
+2015-02-27 16:34:44,383 [8] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:37:38,426 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:37:53,838 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:37:53,925 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 132
+2015-02-27 16:37:56,318 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:38:43,649 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:38:54,935 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:47:28,919 [8] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:47:38,712 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:47:58,821 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:48:07,131 [8] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:50:36,215 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:50:51,801 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-02-27 16:51:05,207 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:52:05,115 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:52:11,719 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:52:42,221 [9] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:52:55,219 [9] DEBUG - App.OnExit --- Application closing.
+2015-02-27 16:53:45,082 [8] DEBUG - App.OnStartup --- Staring up.
+2015-02-27 16:53:52,606 [8] DEBUG - App.OnExit --- Application closing.

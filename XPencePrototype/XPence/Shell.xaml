@@ -1,0 +1,81 @@
+﻿<controls:MetroWindow x:Class="XPence.Shell"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
+                      xmlns:views="clr-namespace:XPence.Views"
+                      xmlns:viewModels="clr-namespace:XPence.ViewModels;assembly=XPence.ViewModels"
+                      xmlns:attachedBehaviors="clr-namespace:XPence.AttachedMembers"
+                      xmlns:converters="clr-namespace:XPence.Converters"
+                      xmlns:nativeControls="clr-namespace:XPence.Controls"
+                      attachedBehaviors:ElementLoadingBehavior.InitializeDataContextWhenLoaded="True"
+                      Title="XPence" Icon="/Resources/ExpenseIcon.png"
+                      WindowState="Maximized" ShowTitleBar="False">
+
+    <controls:MetroWindow.Resources>
+        <converters:FlyoutPositionConverter x:Key="positionConv"/>
+        <converters:FlyoutThemeConverter x:Key="themeConv"/>
+        <DataTemplate DataType="{x:Type viewModels:ApplicationViewModel}">
+            <views:ApplicationView />
+        </DataTemplate>
+    </controls:MetroWindow.Resources>
+
+    <controls:MetroWindow.Flyouts>
+        <controls:FlyoutsControl ItemsSource="{Binding Flyouts}">
+            <controls:FlyoutsControl.ItemContainerStyle>
+                <Style BasedOn="{StaticResource {x:Type controls:Flyout}}" 
+                       TargetType="{x:Type controls:Flyout}">
+                    <Setter Property="Header" Value="{Binding Header}" />
+                    <Setter Property="IsOpen" Value="{Binding IsOpen}" />
+                    <Setter Property="Position" Value="{Binding Position,Converter={StaticResource positionConv}}" />
+                    <Setter Property="Theme" Value="{Binding Theme,Converter={StaticResource themeConv}}" />
+                </Style>
+            </controls:FlyoutsControl.ItemContainerStyle>
+        </controls:FlyoutsControl>
+    </controls:MetroWindow.Flyouts>
+
+    <controls:MetroWindow.WindowCommands>
+        <controls:WindowCommands>
+            <Button ToolTip="{x:Static shared:UIText.TP_SETTINGS}" Command="{Binding ToggleSettingsVisibilityCommand}">
+                <Button.Content>
+                    <Viewbox Height="15" Width="15">
+                        <Path Data="{StaticResource SettingsFigure}" 
+                              Stretch="Uniform" Fill="{DynamicResource BlackBrush}" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="3" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+
+            <Button ToolTip="{x:Static shared:UIText.TP_INFO}" Command="{Binding ShowHelpCommand}">
+                <Button.Content>
+                    <Viewbox Height="15" Width="15">
+                        <Path Data="{StaticResource InfoFigure}" 
+                              Stretch="Uniform" Fill="{DynamicResource BlackBrush}" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="3" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+        </controls:WindowCommands>
+    </controls:MetroWindow.WindowCommands>
+
+    <Grid>
+        <nativeControls:AnimatedContentControl Content="{Binding SelectedView}"/>
+    </Grid>
+    
+</controls:MetroWindow>

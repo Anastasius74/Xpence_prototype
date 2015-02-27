@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence", "XPence\XPence.csproj", "{E647E4DC-1F13-4B16-AE77-DD1DA26C062A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4D8A86C2-400D-4D45-AF4C-8F2A07F734FC}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\De.TorstenMandelkow.MetroChart.dll = Lib\De.TorstenMandelkow.MetroChart.dll
+		Lib\Iesi.Collections.dll = Lib\Iesi.Collections.dll
+		Lib\MahApps.Metro.dll = Lib\MahApps.Metro.dll
+		Lib\MahApps.Metro.Resources.dll = Lib\MahApps.Metro.Resources.dll
+		Lib\System.Windows.Interactivity.dll = Lib\System.Windows.Interactivity.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.ViewModels", "XPence.ViewModels\XPence.ViewModels.csproj", "{D45E0826-D44E-4CF1-BDCD-AEBA0CDE7A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.Infrastructure", "XPence.Infrastructure\XPence.Infrastructure.csproj", "{B5506544-BBD8-4D5C-8C50-71A37454ED62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.Shared", "XPence.Shared\XPence.Shared.csproj", "{35BC1AF0-EE5F-4726-9016-57FA35FE5F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.ControlsLib", "XPence.ControlsLib\XPence.ControlsLib.csproj", "{000EEC0B-F056-41FA-B10B-FCF11D2D7075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.Framework", "XPence.Framework\XPence.Framework.csproj", "{5F5373AE-8A86-4931-8EE3-BCFD569F79ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.ExtensionMethods", "XPence.ExtensionMethods\XPence.ExtensionMethods.csproj", "{FE9ADC11-B85A-48A8-9A56-DA22F410C82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.Models", "XPence.Models\XPence.Models.csproj", "{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.DbAccess", "XPence.DbAccess\XPence.DbAccess.csproj", "{44850B92-97D5-49BE-988D-82C14E052355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence.Services", "XPence.Services\XPence.Services.csproj", "{F4273925-CD19-4797-950A-54103B4C031E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E647E4DC-1F13-4B16-AE77-DD1DA26C062A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E647E4DC-1F13-4B16-AE77-DD1DA26C062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E647E4DC-1F13-4B16-AE77-DD1DA26C062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E647E4DC-1F13-4B16-AE77-DD1DA26C062A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45E0826-D44E-4CF1-BDCD-AEBA0CDE7A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45E0826-D44E-4CF1-BDCD-AEBA0CDE7A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45E0826-D44E-4CF1-BDCD-AEBA0CDE7A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45E0826-D44E-4CF1-BDCD-AEBA0CDE7A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5506544-BBD8-4D5C-8C50-71A37454ED62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5506544-BBD8-4D5C-8C50-71A37454ED62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5506544-BBD8-4D5C-8C50-71A37454ED62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5506544-BBD8-4D5C-8C50-71A37454ED62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BC1AF0-EE5F-4726-9016-57FA35FE5F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BC1AF0-EE5F-4726-9016-57FA35FE5F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BC1AF0-EE5F-4726-9016-57FA35FE5F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BC1AF0-EE5F-4726-9016-57FA35FE5F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000EEC0B-F056-41FA-B10B-FCF11D2D7075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000EEC0B-F056-41FA-B10B-FCF11D2D7075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000EEC0B-F056-41FA-B10B-FCF11D2D7075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000EEC0B-F056-41FA-B10B-FCF11D2D7075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5373AE-8A86-4931-8EE3-BCFD569F79ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5373AE-8A86-4931-8EE3-BCFD569F79ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5373AE-8A86-4931-8EE3-BCFD569F79ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5373AE-8A86-4931-8EE3-BCFD569F79ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE9ADC11-B85A-48A8-9A56-DA22F410C82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE9ADC11-B85A-48A8-9A56-DA22F410C82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE9ADC11-B85A-48A8-9A56-DA22F410C82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE9ADC11-B85A-48A8-9A56-DA22F410C82E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44850B92-97D5-49BE-988D-82C14E052355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44850B92-97D5-49BE-988D-82C14E052355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44850B92-97D5-49BE-988D-82C14E052355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44850B92-97D5-49BE-988D-82C14E052355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4273925-CD19-4797-950A-54103B4C031E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4273925-CD19-4797-950A-54103B4C031E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4273925-CD19-4797-950A-54103B4C031E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4273925-CD19-4797-950A-54103B4C031E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
