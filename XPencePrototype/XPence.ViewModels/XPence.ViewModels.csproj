@@ -64,6 +64,10 @@
       <Project>{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}</Project>
       <Name>XPence.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XPence.Services\XPence.Services.csproj">
+      <Project>{F4273925-CD19-4797-950A-54103B4C031E}</Project>
+      <Name>XPence.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XPence.Shared\XPence.Shared.csproj">
       <Project>{35bc1af0-ee5f-4726-9016-57fa35fe5f05}</Project>
       <Name>XPence.Shared</Name>

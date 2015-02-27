@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
 using XPence.DbAccess.Implementations;
+using XPence.Models;
 using XPence.Services.Interfaces;
 
 namespace XPence.Services.Implementation
@@ -14,7 +14,7 @@ namespace XPence.Services.Implementation
             unitOfWorkOfComponent = new UnitOfWork();
         }
 
-        public ObservableCollection<Models.Component> GetComponents()
+        public ObservableCollection<Component> SelectComponents()
         {
             ObservableCollection<Component> components = new ObservableCollection<Component>();
 
@@ -27,16 +27,33 @@ namespace XPence.Services.Implementation
             
         }
 
-        public long CreateComponent(Component component)
+        public Component SelectComponent(long id)
         {
-            unitOfWorkOfComponent.Repository<Component>().Insert(component);
-
-            return component.Id;
+            return unitOfWorkOfComponent.Repository<Component>().GetById(id);
         }
 
+        /// <summary>
+        /// create a new Component.
+        /// </summary>
+        public void AddNewComponent(Component component)
+        {
+            unitOfWorkOfComponent.Repository<Component>().Insert(component);
+        }
+
+        /// <summary>
+        /// Save a component
+        /// </summary>
         public void SaveComponent()
         {
             unitOfWorkOfComponent.Commit();
+        }
+
+        /// <summary>
+        /// delete Components.
+        /// </summary>
+        public void DeleteComponent(Component component)
+        {
+            unitOfWorkOfComponent.Repository<Component>().Delete(component);   
         }
     }
 }

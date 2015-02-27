@@ -8,8 +8,10 @@ namespace XPence.Services.Interfaces
     /// </summary>
     public interface IComponentAccessService
     {
-        ObservableCollection<Component> GetComponents();
-        long CreateComponent(Component component);
+        ObservableCollection<Component> SelectComponents();
+        Component SelectComponent(long id);
+        void AddNewComponent(Component component);
         void SaveComponent();
+        void DeleteComponent(Component component);
     }
 }

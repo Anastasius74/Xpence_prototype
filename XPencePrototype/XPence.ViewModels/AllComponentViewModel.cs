@@ -1,6 +1,9 @@
 ﻿using System.Windows.Input;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.CoreClasses;
+using XPence.Infrastructure.MessagingService;
+using XPence.Services.Implementation;
+using XPence.Services.Interfaces;
 
 namespace XPence.ViewModels
 {
@@ -8,10 +11,11 @@ namespace XPence.ViewModels
     {
         private ExtendedObservableCollection<ComponentViewModel> components;
         private ComponentViewModel selectedComponent;
-        
-        public AllComponentViewModel()
+        private IComponentAccessService componentService;
+
+        public AllComponentViewModel(IMessagingService messagingService)
         {
-            
+            componentService = new ComponentAccessService();
         }
 
         /// <summary>

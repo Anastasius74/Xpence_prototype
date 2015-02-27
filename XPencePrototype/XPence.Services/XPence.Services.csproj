@@ -49,7 +49,6 @@
     <Compile Include="Implementation\EntityAccessService.cs" />
     <Compile Include="Implementation\ComponentAccessService.cs" />
     <Compile Include="Implementation\DatabaseInfoService.cs" />
-    <Compile Include="Implementation\MainWindowService.cs" />
     <Compile Include="Interfaces\IEntityAccessService.cs" />
     <Compile Include="Interfaces\IDatabaseInfoService.cs" />
     <Compile Include="Interfaces\IComponentAccessService.cs" />
@@ -69,12 +68,17 @@
       <Project>{5f5373ae-8a86-4931-8ee3-bcfd569f79ed}</Project>
       <Name>XPence.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XPence.Infrastructure\XPence.Infrastructure.csproj">
+      <Project>{B5506544-BBD8-4D5C-8C50-71A37454ED62}</Project>
+      <Name>XPence.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XPence.Models\XPence.Models.csproj">
       <Project>{bf9b2b41-1041-4e52-9642-eddd58b7242f}</Project>
       <Name>XPence.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
