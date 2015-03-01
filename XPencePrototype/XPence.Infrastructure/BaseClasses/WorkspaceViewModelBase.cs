@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace XPence.Infrastructure.BaseClasses
 {
     /// <summary>
@@ -29,6 +31,11 @@ namespace XPence.Infrastructure.BaseClasses
         /// </summary>
         public bool CanUserNavigate { get; protected set; }
 
+        /// <summary>
+        /// Gets the registered name of the view.
+        /// </summary>
+        public string RegisteredName { get; private set; }
+
         #endregion
 
         #region Constructor
@@ -36,11 +43,16 @@ namespace XPence.Infrastructure.BaseClasses
         /// <summary>
         /// Initializes an instance of WorkspaceViewModelBase.
         /// </summary>
+        /// <param name="registeredName"></param>
         /// <param name="canUserNavigate">Optional parameter if the present logged in user can navigate to this instance of <see cref="WorkspaceViewModelBase"/> </param>
-        protected WorkspaceViewModelBase(bool canUserNavigate=true)
+        protected WorkspaceViewModelBase(string registeredName, bool canUserNavigate = true)
         {
+            if (string.IsNullOrEmpty(registeredName))
+                throw new ArgumentNullException("registeredName");
             CanUserNavigate = canUserNavigate;
+            RegisteredName = registeredName;
         }
+
 
         #endregion
 

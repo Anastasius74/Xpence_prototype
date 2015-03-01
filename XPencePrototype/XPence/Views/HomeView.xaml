@@ -8,10 +8,10 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
 
-        <!--<DataTemplate DataType="{x:Type viewModels:ManageViewModel}">
-            <Button Style="{DynamicResource TileButtonStyle}" Content="{StaticResource UserFigure}"
+        <DataTemplate DataType="{x:Type viewModels:AllComponentViewModel}">
+            <Button Style="{DynamicResource TileButtonStyle}" Content="{StaticResource MoneyFigure}"
                     ToolTip="{Binding DisplayName}" Command="{Binding DataContext.GoToCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding RegisteredName}"/>
-        </DataTemplate>-->
+        </DataTemplate>
 
     </UserControl.Resources>
     <apex:ApexGrid >

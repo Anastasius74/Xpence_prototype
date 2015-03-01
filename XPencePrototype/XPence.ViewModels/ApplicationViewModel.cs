@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Input;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.CoreClasses;
@@ -52,7 +53,7 @@ namespace XPence.ViewModels
         ///     Initializes an instance of <see cref="ApplicationViewModel" />.
         /// </summary>
         /// <param name="messagingService">An implementation of <see cref="IMessagingService" /> </param>
-        public ApplicationViewModel(IMessagingService messagingService)
+        public ApplicationViewModel(IMessagingService messagingService) : base("ApplicationViewModel")
         {
             //Configure the navigator
             Navigator = NavigatorFactory.GetNavigator();
@@ -62,7 +63,12 @@ namespace XPence.ViewModels
             //                       new ManageViewModel(ApplicationConstants.MANAGE_VIEW_REGERED_NAME,userRepository,messagingService,isUserAdmin)
             //                   };
             //viewList.ForEach(wvm => Navigator.AddView(wvm));
-            Navigator.AddHomeView(new HomeViewModel(null, messagingService));
+            var viewList = new List<WorkspaceViewModelBase>
+            {
+                new AllComponentViewModel(ApplicationConstants.AllComponentViewRegeredName, messagingService)
+            };
+            viewList.ForEach(wvm => Navigator.AddView(wvm));
+            Navigator.AddHomeView(new HomeViewModel(viewList, ApplicationConstants.HomeViewRegeredName, messagingService));
             Navigator.PropertyChanged += NavigatorPropertyChanged;
             Navigator.NavigateToHome();
             //Initialie the commands

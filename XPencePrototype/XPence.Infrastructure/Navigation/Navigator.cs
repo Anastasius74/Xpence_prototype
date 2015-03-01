@@ -79,6 +79,7 @@ namespace XPence.Infrastructure.Navigation
                 _currentView =_views[viewKey];
                 OnPropertyChanged("CurrentView");
             }
+        
         }
 
         /// <summary>

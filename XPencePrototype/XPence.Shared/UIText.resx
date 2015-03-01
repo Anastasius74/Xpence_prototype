@@ -183,26 +183,17 @@
   <data name="GRAPH_VIEW_HEADER_TEXT" xml:space="preserve">
     <value>Break up</value>
   </data>
-  <data name="GRID_AMOUNT_HEADER_TEXT" xml:space="preserve">
-    <value>Amount</value>
+  <data name="GRID_CompName_HEADER_TEXT" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="GRID_CREATED_BY" xml:space="preserve">
-    <value>Created by</value>
+  <data name="GRID_CompIsStorageOwner_HEADER_TEXT" xml:space="preserve">
+    <value>IsStorageOwner</value>
   </data>
-  <data name="GRID_DATE_HEADER_TEXT" xml:space="preserve">
-    <value>Date</value>
+  <data name="GRID_CompLayer_HEADER_TEXT" xml:space="preserve">
+    <value>Layer</value>
   </data>
-  <data name="GRID_DESC_HEADER_TEXT" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="GRID_FLOW_HEADER_TEXT" xml:space="preserve">
-    <value>Flow</value>
-  </data>
-  <data name="GRID_LAST_MODIFIED_BY" xml:space="preserve">
-    <value>Last modified by</value>
-  </data>
-  <data name="GRID_PURP_HEADER_TEXT" xml:space="preserve">
-    <value>Purpose</value>
+  <data name="GRID_CompCore_HEADER_TEXT" xml:space="preserve">
+    <value>Core</value>
   </data>
   <data name="HELP_WINDOW_HEADER" xml:space="preserve">
     <value>About XPense</value>
@@ -309,32 +300,20 @@
   <data name="TP_SETTINGS" xml:space="preserve">
     <value>Settings.</value>
   </data>
-  <data name="TRANSACTIONS" xml:space="preserve">
+  <data name="Components" xml:space="preserve">
     <value />
   </data>
-  <data name="TRANS_AMOUNT_LABEL_TXT" xml:space="preserve">
-    <value>Amount:</value>
+  <data name="COMP_Name_LABEL_TXT" xml:space="preserve">
+    <value>Name:</value>
   </data>
-  <data name="TRANS_DATE_LABEL_TXT" xml:space="preserve">
-    <value>Date:</value>
+  <data name="COMP_IsStorageOwner_LABEL_TXT" xml:space="preserve">
+    <value>IsStorageOwner:</value>
   </data>
-  <data name="TRANS_DESC_LABEL_TXT" xml:space="preserve">
-    <value>Description:</value>
+  <data name="COMP_Layer_LABEL_TXT" xml:space="preserve">
+    <value>Name:</value>
   </data>
-  <data name="TRANS_FLOW_TYPE_LABEL_TEXT" xml:space="preserve">
-    <value>Type:</value>
-  </data>
-  <data name="TRANS_PURPOSE_TYPE_LABEL_TXT" xml:space="preserve">
-    <value>Purpose:</value>
-  </data>
-  <data name="USERNAME_LABEL_TEXT" xml:space="preserve">
-    <value>Username :</value>
-  </data>
-  <data name="USER_LABEL_TEXT" xml:space="preserve">
-    <value>User</value>
-  </data>
-  <data name="USER_ROLE_LABEL_TEXT" xml:space="preserve">
-    <value>Role:</value>
+  <data name="COMP_Core_LABEL_TXT" xml:space="preserve">
+    <value>Core:</value>
   </data>
   <data name="WAIT_SCREEN_HEADER" xml:space="preserve">
     <value>Please wait</value>

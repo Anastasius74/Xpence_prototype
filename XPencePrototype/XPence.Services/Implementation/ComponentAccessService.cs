@@ -12,6 +12,7 @@ namespace XPence.Services.Implementation
         public ComponentAccessService()
         {
             unitOfWorkOfComponent = new UnitOfWork();
+            unitOfWorkOfComponent.Initialize();
         }
 
         public ObservableCollection<Component> SelectComponents()

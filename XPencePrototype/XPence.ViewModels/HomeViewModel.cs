@@ -58,17 +58,19 @@ namespace XPence.ViewModels
         /// Initializes an instance of <see cref="HomeViewModel"/>.
         /// </summary>
         /// <param name="viewList">The enumerable of all other view than the home view.</param>
+        /// <param name="registeredName">registered name for the view</param>
         /// <param name="messagingService">An implementation of <see cref="IMessagingService"/>.</param>
-        public HomeViewModel(IEnumerable<WorkspaceViewModelBase> viewList, IMessagingService messagingService)
+        public HomeViewModel(IEnumerable<WorkspaceViewModelBase> viewList, string registeredName, IMessagingService messagingService)
+            : base(registeredName)
         {
-            //if (null == viewList)
-            //    throw new ArgumentNullException("viewList");
+            if (null == viewList)
+                throw new ArgumentNullException("viewList");
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             _messagingService = messagingService;
             DisplayName = UIText.HOME_VIEW_HEADER;
             CanGoBack = false;
-            AllViews = new ObservableCollection<WorkspaceViewModelBase>();
+            AllViews = new ObservableCollection<WorkspaceViewModelBase>(viewList);
             //Command Initialization
             GoToCommand = new RelayCommand<string>(GoToView);
         }

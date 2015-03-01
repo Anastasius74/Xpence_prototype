@@ -7,6 +7,8 @@ namespace XPence.ViewModels
 {
     public class ComponentViewModel : ViewModelBase
     {
+        private bool isMarked;
+
         /// <summary>
         /// Gets or sets the wrapped up component model.
         /// </summary>
@@ -64,6 +66,21 @@ namespace XPence.ViewModels
         {
             get { return ComponentEntity.Core; }
             set { ComponentEntity.Core = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets if the instance of <see cref="TransactionViewModel"/> is marked in the UI.
+        /// </summary>
+        public bool IsMarked
+        {
+            get { return isMarked; }
+            set
+            {
+                if (value == isMarked)
+                    return;
+                isMarked = value;
+                OnPropertyChanged(GetPropertyName(() => IsMarked));
+            }
         }
 
         /// <summary>
