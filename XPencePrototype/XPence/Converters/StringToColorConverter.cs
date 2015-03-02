@@ -28,7 +28,7 @@ namespace XPence.Converters
             {
                 case AppConstants.CONVERT_ACCENT:
                     var aceentColorName = System.Convert.ToString(value);
-                    var accent = ThemeManager.DefaultAccents.FirstOrDefault(a => string.CompareOrdinal(a.Name, aceentColorName) == 0);
+                    var accent = ThemeManager.Accents.FirstOrDefault(a => string.CompareOrdinal(a.Name, aceentColorName) == 0);
                     if (null != accent)
                         return accent.Resources["AccentColorBrush"] as Brush;
                     break;

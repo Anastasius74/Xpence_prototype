@@ -144,8 +144,8 @@
   <data name="CHANGE_PICTURE_BUTTON_TEXT" xml:space="preserve">
     <value>Change</value>
   </data>
-  <data name="DELETING_TRANS_WAIT_MSG" xml:space="preserve">
-    <value>Deleting transaction(s)...</value>
+  <data name="DELETING_Components_WAIT_MSG" xml:space="preserve">
+    <value>Deleting component(s)...</value>
   </data>
   <data name="ERROR_OCCURED_MSG" xml:space="preserve">
     <value>Sorry! Some error occurred.</value>

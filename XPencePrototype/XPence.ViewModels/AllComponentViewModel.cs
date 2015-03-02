@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.CoreClasses;
 using XPence.Infrastructure.MessagingService;
+using XPence.Models;
 using XPence.Services.Implementation;
 using XPence.Services.Interfaces;
 using XPence.Shared;
@@ -14,7 +16,7 @@ namespace XPence.ViewModels
     {
         private ExtendedObservableCollection<ComponentViewModel> components;
         private ComponentViewModel selectedComponent;
-        private IComponentAccessService componentService;
+        private readonly IEntityAccessService<Component> componentService;
         private readonly IMessagingService messagingService;
         
         public AllComponentViewModel(string registeredName, IMessagingService messagingService): base(registeredName)
@@ -23,11 +25,16 @@ namespace XPence.ViewModels
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
 
-            componentService = new ComponentAccessService();
+            componentService = new EntityAccessService<Component>();
             Components = new ExtendedObservableCollection<ComponentViewModel>();
             
-            var list = componentService.SelectComponents().Select(t => new ComponentViewModel(t));
+            var list = componentService.SelectAll().Select(t => new ComponentViewModel(t));
             Components.AddRange(list);
+
+            //Initialize commands
+            AddNewComponentCommand = new RelayCommand(CreateComponent);
+            SaveComponentCommand = new RelayCommand(SaveComponent, CanSaveComponent);
+            DeleteComponentsCommand = new RelayCommand(DeleteComponents);
         }
 
         /// <summary>
@@ -61,37 +68,45 @@ namespace XPence.ViewModels
             }
         }
 
+        private void CreateComponent()
+        {
+            componentService.Create(SelectedComponent.ComponentEntity);
+        }
+
         /// <summary>
         /// Save the selected transction.
         /// </summary>
-        private void SaveTransaction()
+        private void SaveComponent()
         {
             messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.SAVING_TRANS_WAIT_MSG);
-           //_transactionRepository.SaveTransactionAsync(SelectedTransaction.Entity);
+            componentService.Save(SelectedComponent.ComponentEntity);
         }
 
-        private bool CanSaveTransaction()
+        private bool CanSaveComponent()
         {
-            //if (null == SelectedTransaction)
-            //    return false;
-            //return SelectedTransaction.IsValid;
-            return true;
+            if (null == SelectedComponent)
+            {
+                return false;
+            }
+
+            return SelectedComponent.IsValid;
         }
 
         /// <summary>
-        /// Deletes the transaction marked.
-        /// If no transaction id marked, the selected transaction is deleted.
+        /// Deletes the component marked.
+        /// If no component id marked, the selected component is deleted.
         /// </summary>
-        private void DeleteTransactions()
+        private void DeleteComponents()
         {
             if (Components.Any())
             {
                 var markedTrans = Components.Where(t => t.IsMarked);
-                if (markedTrans.Any())
+                IList<ComponentViewModel> componentViewModels = markedTrans as IList<ComponentViewModel> ?? markedTrans.ToList();
+                if (componentViewModels.Any())
                 {
-                    //var markedArray = markedTrans.Select(t => t.Entity).ToArray();
-                    //messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.DELETING_TRANS_WAIT_MSG);
-                    //_transactionRepository.DeleteTransactionsAsync(markedArray);
+                    IEnumerable<Component> markedArray = componentViewModels.Select(t => t.ComponentEntity);
+                    messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.DELETING_Components_WAIT_MSG);
+                    componentService.DeleteEntities(markedArray);
                     return;
                 }
             }

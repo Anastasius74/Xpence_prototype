@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Configuration;
+using System.Security.AccessControl;
 using System.Windows.Input;
 using XPence.Shared;
 using XPence.Infrastructure.BaseClasses;
@@ -142,8 +144,9 @@ namespace XPence.ViewModels
         /// </summary>
         private void SetUserPreference()
         {
-            string accent = AppData.ApplicationUser.SelectedAccent ?? AppearanceManager.GetApplicationAccent();
-            string theme = AppData.ApplicationUser.SelectedTheme ?? AppearanceManager.GetApplicationTheme();
+            
+            string accent = AppConfigSettings.ReadAppSettingValue("AccentName") ?? AppearanceManager.GetApplicationAccent();
+            string theme = AppConfigSettings.ReadAppSettingValue("AppThemeName") ?? AppearanceManager.GetApplicationTheme();
             AppearanceManager.ChangeAccent(accent);
             AppearanceManager.ChangeTheme(theme);
             //Set the defaults in settings view too!

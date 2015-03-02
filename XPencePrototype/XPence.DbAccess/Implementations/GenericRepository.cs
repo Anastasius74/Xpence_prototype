@@ -105,6 +105,18 @@ namespace XPence.DbAccess.Implementations
         }
 
         /// <summary>
+        /// Delete the selected entities.
+        /// </summary>
+        /// <param name="entities">The selected entities to be deleted.</param>
+        public void DeleteAll(IEnumerable<TEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                Delete(entity);
+            }
+        }
+
+        /// <summary>
         /// Update the entity in the context with the given the entity model object.
         /// </summary>
         /// <param name="entityToUpdate">The entity which has to be updated in the context.</param>

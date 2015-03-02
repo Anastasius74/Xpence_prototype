@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
@@ -22,8 +23,8 @@ namespace XPence.Infrastructure.Utility
         /// </summary>
         static AppearanceManager()
         {
-            LightThemeText = "Light";
-            DarkThemeText = "Dark";
+            LightThemeText = "BaseLight";
+            DarkThemeText = "BaseDark";
         }
 
         #endregion
@@ -36,7 +37,7 @@ namespace XPence.Infrastructure.Utility
         /// <returns></returns>
         public static IEnumerable<string> GetAccentNames()
         {
-            return ThemeManager.DefaultAccents.Select(a => a.Name).ToList();
+            return ThemeManager.Accents.Select(a => a.Name).ToList();
         }
 
         /// <summary>
@@ -55,8 +56,10 @@ namespace XPence.Infrastructure.Utility
         /// <returns></returns>
         public static string GetApplicationAccent()
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            return theme.Item2.Name;
+            var accentName = AppConfigSettings.ReadAppSettingValue("AccentName") ?? "Blue";
+            var theme = ThemeManager.Accents.First(x => x.Name == accentName);
+
+            return theme.Name;
         }
 
         /// <summary>
@@ -65,12 +68,9 @@ namespace XPence.Infrastructure.Utility
         /// <returns></returns>
         public static string GetApplicationTheme()
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            if (theme.Item1 == Theme.Dark)
-                return DarkThemeText;
-            if (theme.Item1 == Theme.Light)
-                return LightThemeText;
-            throw new Exception("Undetected theme.");
+            var themeName = AppConfigSettings.ReadAppSettingValue("AppThemeName") ?? "BaseLight";
+
+            return themeName;
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace XPence.Infrastructure.Utility
         /// <param name="accentName">The name of the accent color.</param>
         public static void ChangeAccent(string accentName)
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-            var accent = ThemeManager.DefaultAccents.First(x => x.Name == accentName);
-            ThemeManager.ChangeTheme(Application.Current, accent, theme.Item1);
+            var theme = ThemeManager.GetAppTheme(ConfigurationManager.AppSettings["AppThemeName"]);
+            var accent = ThemeManager.Accents.First(x => x.Name == accentName);
+            ThemeManager.ChangeAppStyle(Application.Current, accent, theme);
         }
 
         /// <summary>
@@ -92,20 +92,13 @@ namespace XPence.Infrastructure.Utility
         {
             if (string.CompareOrdinal(LightThemeText, themeName) == 0)
             {
-                var theme = ThemeManager.DetectTheme(Application.Current);
-                ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Light);
+                ThemeManager.ChangeAppTheme(Application.Current, LightThemeText);
             }
             else if (string.CompareOrdinal(DarkThemeText, themeName) == 0)
             {
-                var theme = ThemeManager.DetectTheme(Application.Current);
-                ThemeManager.ChangeTheme(Application.Current, theme.Item2, Theme.Dark);
-            }
-            else
-            {
-                throw new ValueUnavailableException("Theme name not known.");
+                ThemeManager.ChangeAppTheme(Application.Current, DarkThemeText);
             }
         }
-        
 
         #endregion
     }

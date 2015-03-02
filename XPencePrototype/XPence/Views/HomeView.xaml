@@ -9,9 +9,14 @@
     <UserControl.Resources>
 
         <DataTemplate DataType="{x:Type viewModels:AllComponentViewModel}">
-            <Button Style="{DynamicResource TileButtonStyle}" Content="{StaticResource MoneyFigure}"
+            <Button Style="{DynamicResource TileButtonStyle}" Content="Components"
                     ToolTip="{Binding DisplayName}" Command="{Binding DataContext.GoToCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding RegisteredName}"/>
         </DataTemplate>
+
+        <!--<DataTemplate DataType="{x:Type viewModels:AllNodesViewModel}">
+            <Button Style="{DynamicResource TileButtonStyle}" Content="Nodes"
+                    ToolTip="{Binding DisplayName}" Command="{Binding DataContext.GoToCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding RegisteredName}"/>
+        </DataTemplate>-->
 
     </UserControl.Resources>
     <apex:ApexGrid >

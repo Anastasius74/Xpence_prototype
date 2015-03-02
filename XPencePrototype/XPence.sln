@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPence", "XPence\XPence.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4D8A86C2-400D-4D45-AF4C-8F2A07F734FC}"
 	ProjectSection(SolutionItems) = preProject
-		Lib\De.TorstenMandelkow.MetroChart.dll = Lib\De.TorstenMandelkow.MetroChart.dll
 		Lib\Iesi.Collections.dll = Lib\Iesi.Collections.dll
 		Lib\MahApps.Metro.dll = Lib\MahApps.Metro.dll
 		Lib\MahApps.Metro.Resources.dll = Lib\MahApps.Metro.Resources.dll

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -53,6 +52,12 @@ namespace XPence.DbAccess.Interfaces
         /// </summary>
         /// <param name="entityToDelete">The entity model object, which has to be deleted.</param>
         void Delete(TEntity entityToDelete);
+
+        /// <summary>
+        /// Delete the selected entities.
+        /// </summary>
+        /// <param name="entities">The selected entities to be deleted.</param>
+        void DeleteAll(IEnumerable<TEntity> entities);
 
         /// <summary>
         /// Update an entity in the context with the given entity object.

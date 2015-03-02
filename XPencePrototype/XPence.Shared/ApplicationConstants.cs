@@ -11,6 +11,7 @@ namespace XPence.Shared
         // Home Menu constants
         public const string RecentFilesMax = "RecentFilesMax";
         public const string ConnectionStringSection = "connectionStrings";
+        public const string AppSettingsSection = "appSettings";
         public const string DataSourceString = "Data Source=";
         public const string ConnectionStringName = "SimulinkContext";
         public const string DatabaseInfoXmlXPath = "//DatabaseInfoManager/Children/DatabaseInfoItem";

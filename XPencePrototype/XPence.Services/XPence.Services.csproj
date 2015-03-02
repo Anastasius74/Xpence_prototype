@@ -47,11 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\EntityAccessService.cs" />
-    <Compile Include="Implementation\ComponentAccessService.cs" />
     <Compile Include="Implementation\DatabaseInfoService.cs" />
     <Compile Include="Interfaces\IEntityAccessService.cs" />
     <Compile Include="Interfaces\IDatabaseInfoService.cs" />
-    <Compile Include="Interfaces\IComponentAccessService.cs" />
     <Compile Include="Interfaces\IMainWindowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

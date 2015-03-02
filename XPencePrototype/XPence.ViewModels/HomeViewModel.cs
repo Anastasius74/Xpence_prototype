@@ -1,12 +1,4 @@
-﻿/***************************************************************************************************
- * PROJECT : XPence
- * PROJECT DESCRIPTION : A metro style, smart client expense tracking software.
- * AUTHOR : Siddhartha S
- * DISCLAIMER : This code is licensed under CPOL. You are free to use this in your project.
- * The author takes no liabilities for any damage caused because of this code. Use at your own risk.
-****************************************************************************************************/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -31,12 +23,12 @@ namespace XPence.ViewModels
         /// </summary>
         public ObservableCollection<WorkspaceViewModelBase> AllViews
         {
-            get { return _allViews; }
+            get { return allViews; }
             set
             {
-                if (_allViews == value)
+                if (allViews == value)
                     return;
-                _allViews = value;
+                allViews = value;
                 OnPropertyChanged(GetPropertyName(() => AllViews));
             }
         }
@@ -67,8 +59,8 @@ namespace XPence.ViewModels
                 throw new ArgumentNullException("viewList");
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
-            _messagingService = messagingService;
-            DisplayName = UIText.HOME_VIEW_HEADER;
+            this.messagingService = messagingService;
+            //DisplayName = UIText.HOME_VIEW_HEADER;
             CanGoBack = false;
             AllViews = new ObservableCollection<WorkspaceViewModelBase>(viewList);
             //Command Initialization
@@ -90,7 +82,6 @@ namespace XPence.ViewModels
             var wvm = AllViews.FirstOrDefault();
             if (wvm != null && !wvm.CanUserNavigate)
             {
-                _messagingService.ShowMessage(InfoMessages.INF_NOT_AUTORIZED_MESSAGE);
                 return;
             }
             navigator.NavigateToView(viewRegisteredName);
@@ -100,8 +91,8 @@ namespace XPence.ViewModels
 
         #region Member Variables
 
-        private readonly IMessagingService _messagingService;
-        private ObservableCollection<WorkspaceViewModelBase> _allViews;
+        private readonly IMessagingService messagingService;
+        private ObservableCollection<WorkspaceViewModelBase> allViews;
 
         #endregion
     }

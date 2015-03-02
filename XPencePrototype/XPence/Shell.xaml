@@ -34,8 +34,13 @@
         </controls:FlyoutsControl>
     </controls:MetroWindow.Flyouts>
 
-    <controls:MetroWindow.WindowCommands>
+    <controls:MetroWindow.LeftWindowCommands>
         <controls:WindowCommands>
+            <controls:WindowCommands.Style>
+                <Style>
+                    <Setter Property="controls:MetroWindow.HorizontalAlignment" Value="Center"/>
+                </Style>
+            </controls:WindowCommands.Style>
             <Button ToolTip="{x:Static shared:UIText.TP_SETTINGS}" Command="{Binding ToggleSettingsVisibilityCommand}">
                 <Button.Content>
                     <Viewbox Height="15" Width="15">
@@ -53,7 +58,17 @@
                     </Viewbox>
                 </Button.Content>
             </Button>
+        </controls:WindowCommands>
+    </controls:MetroWindow.LeftWindowCommands>
 
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <controls:WindowCommands.Style>
+                <Style>
+                    <Setter Property="controls:MetroWindow.HorizontalAlignment" Value="Center"/>
+                </Style>
+            </controls:WindowCommands.Style>
+            
             <Button ToolTip="{x:Static shared:UIText.TP_INFO}" Command="{Binding ShowHelpCommand}">
                 <Button.Content>
                     <Viewbox Height="15" Width="15">
@@ -72,7 +87,7 @@
                 </Button.Content>
             </Button>
         </controls:WindowCommands>
-    </controls:MetroWindow.WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
 
     <Grid>
         <nativeControls:AnimatedContentControl Content="{Binding SelectedView}"/>

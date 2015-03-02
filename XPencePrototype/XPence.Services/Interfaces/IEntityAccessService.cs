@@ -1,19 +1,19 @@
-﻿using System.Collections.ObjectModel;
-using XPence.DbAccess.Interfaces;
-using XPence.Models;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace XPence.Services.Interfaces
 {
     /// <summary>
-    /// The Interface defining methods for Create Component and Read All Components  
+    /// The Interface defining CRUD operations for the entities.  
     /// </summary>
     public interface IEntityAccessService<TEntity> 
     {
-        ObservableCollection<TEntity> GetAll();
-        TEntity GetById(long entityId);
+        ObservableCollection<TEntity> SelectAll();
+        TEntity SelectById(long entityId);
         long Create(TEntity entity);
         void Save(TEntity entity);
         void Delete(TEntity entity);
+        void DeleteEntities(IEnumerable<TEntity> entities);
         void Commit();
         bool Initialized { get; }
         void Initialize();

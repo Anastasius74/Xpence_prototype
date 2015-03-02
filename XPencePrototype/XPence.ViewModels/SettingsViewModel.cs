@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Shared;
@@ -131,7 +132,8 @@ namespace XPence.ViewModels
                 {
                     AppData.ApplicationUser.SelectedAccent = SelectedAccent;
                     AppData.ApplicationUser.SelectedTheme = SelectedTheme;
-                    //_userRepository.SaveUser(AppData.ApplicationUser);
+                    AppConfigSettings.UpdateAppSetting("AppThemeName", SelectedTheme);
+                    AppConfigSettings.UpdateAppSetting("AccentName", SelectedAccent);
                 }
                 catch (Exception ex)
                 {

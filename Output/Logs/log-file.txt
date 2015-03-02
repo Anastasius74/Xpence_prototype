@@ -144,3 +144,276 @@
    bei MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)
 2015-03-01 23:24:11,341 [11] DEBUG - App.OnStartup --- Staring up.
 2015-03-01 23:25:32,238 [11] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:27:01,374 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:27:56,658 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:28:08,444 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:29:46,469 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:30:28,234 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:34:32,613 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:35:39,757 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:35:43,337 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:35:49,156 [9] DEBUG - App.AppDispatcherUnhandledException --- System.Windows.Markup.XamlParseException: 'Initialization of 'XPence.Shell' threw an exception.' Line number '79' and line position '7'. ---> System.TypeInitializationException: The type initializer for 'MahApps.Metro.Behaviours.StylizedBehaviors' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at MahApps.Metro.Behaviours.StylizedBehaviors..cctor()
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.RuntimeHelpers._RunClassConstructor(RuntimeType type)
+   at System.Windows.DependencyProperty.FromName(String name, Type ownerType)
+   at System.Windows.Baml2006.Baml2006Reader.WriteTypeConvertedInstance(Int16 converterId, Int32 dataByteSize)
+   at System.Windows.Baml2006.Baml2006Reader.Process_PropertyCustom()
+   at System.Windows.Baml2006.Baml2006Reader.Process_OneBamlRecord()
+   at System.Windows.Baml2006.Baml2006Reader.ReadObject(KeyRecord record)
+   at System.Windows.ResourceDictionary.CreateObject(KeyRecord key)
+   at System.Windows.ResourceDictionary.OnGettingValue(Object key, Object& value, Boolean& canCache)
+   at System.Windows.ResourceDictionary.OnGettingValuePrivate(Object key, Object& value, Boolean& canCache)
+   at System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   at System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   at System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   at System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   at System.Windows.ResourceDictionary.FetchResource(Object resourceKey, Boolean allowDeferredResourceReference, Boolean mustReturnDeferredResourceReference, Boolean canCacheAsThemeResource, Boolean& canCache)
+   at System.Windows.SystemResources.LookupResourceInDictionary(ResourceDictionary dictionary, Object key, Boolean allowDeferredResourceReference, Boolean mustReturnDeferredResourceReference, Boolean& canCache)
+   at System.Windows.SystemResources.FindDictionaryResource(Object key, Type typeKey, ResourceKey resourceKey, Boolean isTraceEnabled, Boolean allowDeferredResourceReference, Boolean mustReturnDeferredResourceReference, Boolean& canCache)
+   at System.Windows.SystemResources.FindResourceInternal(Object key, Boolean allowDeferredResourceReference, Boolean mustReturnDeferredResourceReference)
+   at System.Windows.StyleHelper.GetThemeStyle(FrameworkElement fe, FrameworkContentElement fce)
+   at System.Windows.FrameworkElement.UpdateThemeStyleProperty()
+   at System.Windows.FrameworkElement.OnInitialized(EventArgs e)
+   at System.Windows.FrameworkElement.TryFireInitialized()
+   at System.Windows.FrameworkElement.EndInit()
+   at MS.Internal.Xaml.Runtime.ClrObjectRuntime.InitializationGuard(XamlType xamlType, Object obj, Boolean begin)
+   --- End of inner exception stack trace ---
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   at XPence.Shell.InitializeComponent() in c:\dev\Xpence_prototype\XPencePrototype\XPence\Shell.xaml:line 1
+   at XPence.Shell..ctor() in c:\dev\Xpence_prototype\XPencePrototype\XPence\Shell.xaml.cs:line 12
+   at XPence.App.OnStartup(StartupEventArgs e) in c:\dev\Xpence_prototype\XPencePrototype\XPence\App.xaml.cs:line 28
+   at System.Windows.Application.<.ctor>b__1(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)
+2015-03-02 10:36:05,725 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:36:43,055 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:39:42,522 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:40:00,760 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:40:42,821 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:51:22,859 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:51:34,344 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:51:52,270 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:52:01,040 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:53:28,506 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:53:36,986 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 10:54:33,938 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:54:47,905 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 10:54:59,981 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:10:17,359 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:10:36,622 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:11:00,758 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:11:12,811 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:11:32,274 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:11:56,992 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:18:23,604 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:18:32,169 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:20:27,811 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:20:43,201 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:24:04,620 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:24:23,949 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:24:48,872 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:24:58,802 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 11:27:18,059 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 11:27:28,925 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:14:35,003 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:16:47,427 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:16:59,118 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:23:19,246 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:23:36,920 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:25:19,964 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:25:30,017 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:26:06,987 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:26:14,302 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:30:23,251 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:30:34,265 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:31:33,395 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:32:01,018 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:32:11,877 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:32:25,148 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:32:40,471 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:33:25,288 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:33:33,692 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:34:02,914 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:34:11,226 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:35:44,428 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:35:53,585 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 14:39:08,991 [7] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:51:03,755 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:52:20,606 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:52:40,780 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:54:17,924 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:55:11,518 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:55:55,775 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:56:51,183 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:58:18,507 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:58:53,637 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:59:27,257 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 14:59:58,580 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 14:59:59,867 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 15:00:27,855 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:01:06,040 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 15:02:04,706 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:02:16,727 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 15:02:30,576 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 15:06:15,993 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:27:51,145 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 15:28:32,363 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:46:44,341 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:47:41,799 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:48:44,462 [7] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:53:52,514 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:54:42,413 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 15:54:47,213 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 15:54:51,113 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 15:54:52,305 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 15:56:55,910 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 15:57:19,335 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:09:22,116 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:10:18,103 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:10:31,942 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:10:39,864 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:10:44,706 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:10:48,796 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:11:03,654 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:11:07,368 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:11:22,509 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:11:26,181 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:11:27,201 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:11:31,100 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:11:37,317 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:13:14,894 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:13:32,634 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:13:34,631 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:13:45,406 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:14:29,645 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:23:21,927 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:24:18,449 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:24:26,978 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:24:28,406 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:24:33,016 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:24:59,946 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:26:50,931 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:27:08,136 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:27:09,730 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:27:13,403 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:51:53,982 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:52:35,086 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:52:36,685 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:52:41,534 [11] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:53:51,140 [11] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:54:11,176 [11] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:57:47,459 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 16:58:16,151 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 16:58:28,551 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 16:58:32,855 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:04:56,661 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:05:11,638 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:05:30,132 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:05:34,980 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:10:19,581 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:11:40,840 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:12:07,728 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:12:27,115 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:12:38,468 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:14:04,123 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:15:10,202 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:15:51,606 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:17:03,282 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:17:28,881 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:17:40,150 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:17:44,692 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:20:48,741 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:21:01,625 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:21:11,853 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:21:16,209 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:21:25,928 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:22:18,901 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:22:30,635 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:25:50,105 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:30:31,921 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:30:49,060 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:32:46,677 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:32:50,703 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:34:21,302 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:34:37,845 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:35:17,973 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 17:36:14,535 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:36:49,507 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:44:47,951 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:46:18,961 [8] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:48:34,461 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 17:48:56,744 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 17:48:57,780 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.Configuration.ConfigurationErrorsException: An error occurred loading a configuration file: URI formats are not supported. ---> System.ArgumentException: URI formats are not supported.
+   at System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)
+   at System.IO.Path.GetFullPathInternal(String path)
+   at System.IO.Path.GetFullPath(String path)
+   at System.Configuration.ClientConfigPaths..ctor(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigPaths.GetPaths(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigurationHost.GetStreamName(String configPath)
+   at System.Configuration.Internal.DelegatingConfigHost.GetStreamName(String configPath)
+   at System.Configuration.BaseConfigurationRecord.InitConfigFromFile()
+   --- End of inner exception stack trace ---
+   at System.Configuration.ConfigurationSchemaErrors.ThrowIfErrors(Boolean ignoreLocal)
+   at System.Configuration.BaseConfigurationRecord.ThrowIfParseErrors(ConfigurationSchemaErrors schemaErrors)
+   at System.Configuration.Configuration..ctor(String locationSubPath, Type typeConfigHost, Object[] hostInitConfigurationParams)
+   at System.Configuration.ClientConfigurationHost.OpenExeConfiguration(ConfigurationFileMap fileMap, Boolean isMachine, ConfigurationUserLevel userLevel, String exePath)
+   at System.Configuration.ConfigurationManager.OpenExeConfigurationImpl(ConfigurationFileMap fileMap, Boolean isMachine, ConfigurationUserLevel userLevel, String exePath, Boolean preLoad)
+   at System.Configuration.ConfigurationManager.OpenExeConfiguration(String exePath)
+   at XPence.Infrastructure.Utility.AppConfigSettings.UpdateAppSetting(String key, String value) in c:\dev\Xpence_prototype\XPencePrototype\XPence.Infrastructure\Utility\AppConfigSettings.cs:line 20
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 135
+2015-03-02 17:49:10,508 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:15:42,185 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- System.Configuration.ConfigurationErrorsException: An error occurred loading a configuration file: URI formats are not supported. ---> System.ArgumentException: URI formats are not supported.
+   at System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)
+   at System.IO.Path.GetFullPathInternal(String path)
+   at System.IO.Path.GetFullPath(String path)
+   at System.Configuration.ClientConfigPaths..ctor(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigPaths.GetPaths(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigurationHost.GetStreamName(String configPath)
+   at System.Configuration.Internal.DelegatingConfigHost.GetStreamName(String configPath)
+   at System.Configuration.BaseConfigurationRecord.InitConfigFromFile()
+   --- End of inner exception stack trace ---
+   at System.Configuration.ConfigurationSchemaErrors.ThrowIfErrors(Boolean ignoreLocal)
+   at System.Configuration.BaseConfigurationRecord.ThrowIfParseErrors(ConfigurationSchemaErrors schemaErrors)
+   at System.Configuration.Configuration..ctor(String locationSubPath, Type typeConfigHost, Object[] hostInitConfigurationParams)
+   at System.Configuration.ClientConfigurationHost.OpenExeConfiguration(ConfigurationFileMap fileMap, Boolean isMachine, ConfigurationUserLevel userLevel, String exePath)
+   at System.Configuration.ConfigurationManager.OpenExeConfigurationImpl(ConfigurationFileMap fileMap, Boolean isMachine, ConfigurationUserLevel userLevel, String exePath, Boolean preLoad)
+   at System.Configuration.ConfigurationManager.OpenExeConfiguration(String exePath)
+   at XPence.Infrastructure.Utility.AppConfigSettings.UpdateAppSetting(String key, String value)
+   at XPence.ViewModels.SettingsViewModel.PromptUserToSaveAppearance() in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 135
+2015-03-02 18:15:45,431 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 18:15:57,439 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:16:25,731 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:16:38,114 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 18:17:23,344 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:17:45,079 [9] DEBUG - App.AppDispatcherUnhandledException --- System.NullReferenceException: Object reference not set to an instance of an object.
+   at XPence.Infrastructure.Utility.AppearanceManager.GetApplicationTheme() in c:\dev\Xpence_prototype\XPencePrototype\XPence.Infrastructure\Utility\AppearanceManager.cs:line 74
+   at XPence.ViewModels.SettingsViewModel..ctor(IMessagingService messagingService) in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\SettingsViewModel.cs:line 76
+   at XPence.ViewModels.MainWindowViewModel..ctor(IMessagingService messagingService) in c:\dev\Xpence_prototype\XPencePrototype\XPence.ViewModels\MainWindowViewModel.cs:line 86
+   at XPence.App.OnStartup(StartupEventArgs e) in c:\dev\Xpence_prototype\XPencePrototype\XPence\App.xaml.cs:line 31
+   at System.Windows.Application.<.ctor>b__1(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)
+2015-03-02 18:17:52,557 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:19:13,853 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:20:07,144 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:21:03,188 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:23:16,241 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:25:56,296 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:26:30,163 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:26:49,278 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:27:09,553 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:27:23,950 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 18:27:26,825 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 18:27:30,353 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 18:28:36,681 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 19:09:30,646 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 19:10:22,440 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 19:10:40,031 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 19:10:44,727 [10] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 19:10:46,691 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 19:10:50,253 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 19:11:00,100 [10] DEBUG - App.OnExit --- Application closing.

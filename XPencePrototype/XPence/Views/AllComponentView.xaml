@@ -14,7 +14,7 @@
 
         <!--The grid-->
         <DataGrid Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch" SelectedItem="{Binding SelectedTransaction}"
+                  VerticalAlignment="Stretch" SelectedItem="{Binding SelectedComponent}"
                       FontSize="14" ItemsSource="{Binding Components}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Width="20" Binding="{Binding IsMarked}" />
@@ -48,12 +48,13 @@
         <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
             <GroupBox Width="420"
                       IsEnabled="{Binding Converter={StaticResource nullToBool}}"  
-                      DataContext="{Binding SelectedTransaction, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
+                      DataContext="{Binding SelectedComponent, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
                 <GroupBox.Header>
                     <MultiBinding Converter="{StaticResource headerTextConv}">
-                        <Binding Path="TransactionId"/>
-                        <Binding Path="TransactionDate"/>
-                        <Binding Path="Amount"/>
+                        <Binding Path="ComponentName"/>
+                        <Binding Path="ComponentIsStorageOwner"/>
+                        <Binding Path="ComponentLayer"/>
+                        <Binding Path="ComponentCore"/>
                     </MultiBinding>
                 </GroupBox.Header>
                 <views:ComponentView />

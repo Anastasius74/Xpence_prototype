@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using XPence.DbAccess.Implementations;
 using XPence.Services.Interfaces;
@@ -12,9 +13,10 @@ namespace XPence.Services.Implementation
         public EntityAccessService()
         {
             unitOfWork = new UnitOfWork();
+            unitOfWork.Initialize();
         }
 
-        public ObservableCollection<TModel> GetAll()
+        public ObservableCollection<TModel> SelectAll()
         {
             ObservableCollection<TModel> models = new ObservableCollection<TModel>();
 
@@ -26,7 +28,7 @@ namespace XPence.Services.Implementation
             return models;
         }
 
-        public TModel GetById(long entityId)
+        public TModel SelectById(long entityId)
         {
             return unitOfWork.Repository<TModel>().GetById(entityId);
         }
@@ -45,6 +47,11 @@ namespace XPence.Services.Implementation
         public void Delete(TModel entity)
         {
             unitOfWork.Repository<TModel>().Delete(entity);
+        }
+
+        public void DeleteEntities(IEnumerable<TModel> entities)
+        {
+            unitOfWork.Repository<TModel>().DeleteAll(entities);   
         }
 
         public void Commit()

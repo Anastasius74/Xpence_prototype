@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using XPence.Framework;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Models;
@@ -7,6 +8,7 @@ namespace XPence.ViewModels
 {
     public class ComponentViewModel : ViewModelBase
     {
+        private static readonly string[] PropertyNames = { "ComponentName", "ComponentIsStorageOwner", "ComponentLayer", "ComponentCore" };
         private bool isMarked;
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets if the instance of <see cref="TransactionViewModel"/> is marked in the UI.
+        /// Gets or sets if the instance of <see cref="ComponentViewModel"/> is marked in the UI.
         /// </summary>
         public bool IsMarked
         {
@@ -81,6 +83,14 @@ namespace XPence.ViewModels
                 isMarked = value;
                 OnPropertyChanged(GetPropertyName(() => IsMarked));
             }
+        }
+
+        /// <summary>
+        /// Returns if this instance of <see cref="ComponentViewModel"/> is valid for saving.
+        /// </summary>
+        public bool IsValid
+        {
+            get { return PropertyNames.All(p => GetErrorForProperty(p) == null); }
         }
 
         /// <summary>

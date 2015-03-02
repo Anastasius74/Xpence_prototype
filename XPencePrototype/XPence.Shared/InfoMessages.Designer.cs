@@ -61,38 +61,11 @@ namespace XPence.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You need to check transactions for deleting them..
+        ///   Looks up a localized string similar to You need to check components for deleting them..
         /// </summary>
         public static string INF_MARK_FOR_DEL {
             get {
                 return ResourceManager.GetString("INF_MARK_FOR_DEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sorry! You are not authorised...
-        /// </summary>
-        public static string INF_NOT_AUTORIZED_MESSAGE {
-            get {
-                return ResourceManager.GetString("INF_NOT_AUTORIZED_MESSAGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password changed successfully..
-        /// </summary>
-        public static string INF_PASSWORD_CHANGED_MSG {
-            get {
-                return ResourceManager.GetString("INF_PASSWORD_CHANGED_MSG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The username already exists.
-        /// </summary>
-        public static string INF_USERNAME_DUP_MSG {
-            get {
-                return ResourceManager.GetString("INF_USERNAME_DUP_MSG", resourceCulture);
             }
         }
     }
