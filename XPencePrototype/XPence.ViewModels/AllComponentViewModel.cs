@@ -71,6 +71,7 @@ namespace XPence.ViewModels
         private void CreateComponent()
         {
             componentService.Create(SelectedComponent.ComponentEntity);
+            componentService.Commit();
         }
 
         /// <summary>
@@ -78,8 +79,9 @@ namespace XPence.ViewModels
         /// </summary>
         private void SaveComponent()
         {
-            messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.SAVING_TRANS_WAIT_MSG);
+            //messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.SAVING_Entity_WAIT_MSG);
             componentService.Save(SelectedComponent.ComponentEntity);
+            componentService.Commit();
         }
 
         private bool CanSaveComponent()

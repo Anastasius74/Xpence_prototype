@@ -36,12 +36,9 @@
                     </Style>
                 </DockPanel.Resources>
 
-                <ToggleButton Width="40" Height="40" Margin="5" VerticalAlignment="Center" DockPanel.Dock="Right"
-                                  IsChecked="{Binding FilterViewModel.IsOpen}" Style="{DynamicResource MetroToggleButtonStyle}" 
-                                  Foreground="{DynamicResource WhiteBrush}" ToolTip="{x:Static shared:UIText.TP_FILTER_TRANS}" Content="{StaticResource FilterFigure}"/>
-                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_NEW_TRANS}" Content="{StaticResource NewFigure}" Command="{Binding AddNewTransactionCommand}"/>
-                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_SAVE_TRANS}" Content="{StaticResource SaveFigure}" Command="{Binding SaveTransactionCommand}"/>
-                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_DELETE_TRANS}" Content="{StaticResource DeleteFigure}" Command="{Binding DeleteTransactionsCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_NEW_Model}" Content="{StaticResource NewFigure}" Command="{Binding AddNewComponentCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_SAVE_Model}" Content="{StaticResource SaveFigure}" Command="{Binding SaveComponentCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_DELETE_Models}" Content="{StaticResource DeleteFigure}" Command="{Binding DeleteComponentsCommand}"/>
             </DockPanel>
         </Border>
 

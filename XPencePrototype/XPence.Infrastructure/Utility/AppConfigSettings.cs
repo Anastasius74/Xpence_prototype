@@ -35,9 +35,11 @@ namespace XPence.Infrastructure.Utility
         public static string ReadAppSettingValue(string key)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(Assembly.GetExecutingAssembly().Location);
-            
-            return config.AppSettings.Settings[key].Value;
-
+            if (config.AppSettings.Settings.Count > 0)
+            {
+                return config.AppSettings.Settings[key].Value;
+            }
+            return null;
         }
     }
 }

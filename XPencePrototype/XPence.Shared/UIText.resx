@@ -243,8 +243,8 @@
   <data name="REENTER_NEW_PASSOWRD_LABEL_TEXT" xml:space="preserve">
     <value>Re enter new password</value>
   </data>
-  <data name="SAVING_TRANS_WAIT_MSG" xml:space="preserve">
-    <value>Saving transaction...</value>
+  <data name="SAVING_Entity_WAIT_MSG" xml:space="preserve">
+    <value>Saving Entity...</value>
   </data>
   <data name="SAVING_USER_WAIT_MSG" xml:space="preserve">
     <value>Saving user...</value>
@@ -267,11 +267,11 @@
   <data name="TP_CHANGE_PICTURE" xml:space="preserve">
     <value>Choose a new picture.</value>
   </data>
-  <data name="TP_DELETE_TRANS" xml:space="preserve">
-    <value>Delete transaction(s).</value>
+  <data name="TP_DELETE_Models" xml:space="preserve">
+    <value>Delete model(s).</value>
   </data>
   <data name="TP_FILTER_TRANS" xml:space="preserve">
-    <value>Filter transactions.</value>
+    <value>Filter models.</value>
   </data>
   <data name="TP_GOTO_HOME_BUTTON" xml:space="preserve">
     <value>Go to home.</value>
@@ -282,8 +282,8 @@
   <data name="TP_LOGIN_BUTTON" xml:space="preserve">
     <value>Login.</value>
   </data>
-  <data name="TP_NEW_TRANS" xml:space="preserve">
-    <value>Add a new transaction.</value>
+  <data name="TP_NEW_Model" xml:space="preserve">
+    <value>Add a new model.</value>
   </data>
   <data name="TP_NEW_USER" xml:space="preserve">
     <value>Add new user.</value>
@@ -291,8 +291,8 @@
   <data name="TP_REFRESH_USER" xml:space="preserve">
     <value>Refresh the user list.</value>
   </data>
-  <data name="TP_SAVE_TRANS" xml:space="preserve">
-    <value>Save transaction.</value>
+  <data name="TP_SAVE_Model" xml:space="preserve">
+    <value>Save model.</value>
   </data>
   <data name="TP_SAVE_USER" xml:space="preserve">
     <value>Save a user.</value>
@@ -310,7 +310,7 @@
     <value>IsStorageOwner:</value>
   </data>
   <data name="COMP_Layer_LABEL_TXT" xml:space="preserve">
-    <value>Name:</value>
+    <value>Layer:</value>
   </data>
   <data name="COMP_Core_LABEL_TXT" xml:space="preserve">
     <value>Core:</value>
