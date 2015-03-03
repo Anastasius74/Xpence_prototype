@@ -7,7 +7,6 @@ using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.CoreClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Infrastructure.Navigation;
-using XPence.Shared;
 
 namespace XPence.ViewModels
 {

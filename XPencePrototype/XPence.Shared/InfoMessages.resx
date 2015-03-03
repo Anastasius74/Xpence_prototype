@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="INF_MARK_FOR_DEL" xml:space="preserve">
-    <value>You need to check components for deleting them.</value>
+  <data name="Inf_Mark_For_Del" xml:space="preserve">
+    <value>You need to save for deleting them.</value>
+  </data>
+  <data name="Inf_Mark_For_Create" xml:space="preserve">
+    <value>You need to save for creating them.</value>
+  </data>
+  <data name="Inf_Mark_For_Update" xml:space="preserve">
+    <value>You need to save for updating them.</value>
   </data>
 </root>

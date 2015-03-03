@@ -61,11 +61,29 @@ namespace XPence.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You need to check components for deleting them..
+        ///   Looks up a localized string similar to You need to save for creating them..
         /// </summary>
-        public static string INF_MARK_FOR_DEL {
+        public static string Inf_Mark_For_Create {
             get {
-                return ResourceManager.GetString("INF_MARK_FOR_DEL", resourceCulture);
+                return ResourceManager.GetString("Inf_Mark_For_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to save for deleting them..
+        /// </summary>
+        public static string Inf_Mark_For_Del {
+            get {
+                return ResourceManager.GetString("Inf_Mark_For_Del", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to save for updating them..
+        /// </summary>
+        public static string Inf_Mark_For_Update {
+            get {
+                return ResourceManager.GetString("Inf_Mark_For_Update", resourceCulture);
             }
         }
     }

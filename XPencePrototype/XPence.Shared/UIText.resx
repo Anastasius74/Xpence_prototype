@@ -195,6 +195,12 @@
   <data name="GRID_CompCore_HEADER_TEXT" xml:space="preserve">
     <value>Core</value>
   </data>
+  <data name="GRID_CompModule_HEADER_TEXT" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="GRID_NodeName_HEADER_TEXT" xml:space="preserve">
+    <value>Network name</value>
+  </data>
   <data name="HELP_WINDOW_HEADER" xml:space="preserve">
     <value>About XPense</value>
   </data>
@@ -285,6 +291,9 @@
   <data name="TP_NEW_Model" xml:space="preserve">
     <value>Add a new model.</value>
   </data>
+  <data name="TP_Update_Model" xml:space="preserve">
+    <value>Update the model.</value>
+  </data>
   <data name="TP_NEW_USER" xml:space="preserve">
     <value>Add new user.</value>
   </data>
@@ -314,6 +323,12 @@
   </data>
   <data name="COMP_Core_LABEL_TXT" xml:space="preserve">
     <value>Core:</value>
+  </data>
+  <data name="COMP_Module_LABEL_TXT" xml:space="preserve">
+    <value>Module:</value>
+  </data>
+  <data name="NODE_NetworkName_LABEL_TXT" xml:space="preserve">
+    <value>Network name:</value>
   </data>
   <data name="WAIT_SCREEN_HEADER" xml:space="preserve">
     <value>Please wait</value>

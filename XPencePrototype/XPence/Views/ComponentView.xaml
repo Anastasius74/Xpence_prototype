@@ -8,7 +8,6 @@
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Margin" Value="5,2,2,2"/>
         </Style>
-        <!--The error template for the content presenter below the text boxes or combo box.-->
         <DataTemplate DataType="{x:Type ValidationError}">
             <TextBlock FontSize="{StaticResource ContentFontSize}"
                                    FontFamily="{StaticResource ContentFontFamily}"
@@ -22,7 +21,7 @@
 
 
     </UserControl.Resources>
-    <apex:ApexGrid Rows="Auto,20,Auto,20,Auto,20,Auto" Columns="Auto,Auto,Auto,Auto">
+    <apex:ApexGrid Rows="Auto,20,Auto,20,Auto,20,Auto,20,Auto" Columns="Auto,Auto,Auto,Auto">
 
         <!--ComponentName-->
         <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Name_LABEL_TXT}"/>
@@ -47,6 +46,11 @@
         <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Core_LABEL_TXT}"/>
         <TextBox x:Name="CompCore" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentCore,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
         <ContentPresenter Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompCore,Path=(Validation.Errors).CurrentItem}" />
-       
+
+        <!--ComponentModule-->
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Module_LABEL_TXT}"/>
+        <TextBox x:Name="CompModule" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentModule,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompModule,Path=(Validation.Errors).CurrentItem}" />
+
     </apex:ApexGrid>
 </UserControl>

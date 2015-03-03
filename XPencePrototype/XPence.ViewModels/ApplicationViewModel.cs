@@ -65,7 +65,8 @@ namespace XPence.ViewModels
             //viewList.ForEach(wvm => Navigator.AddView(wvm));
             var viewList = new List<WorkspaceViewModelBase>
             {
-                new AllComponentViewModel(ApplicationConstants.AllComponentViewRegeredName, messagingService)
+                new AllComponentViewModel(ApplicationConstants.AllComponentViewRegesteredName, messagingService),
+                new AllNodeViewModel(ApplicationConstants.AllNodeViewRegesteredName, messagingService)
             };
             viewList.ForEach(wvm => Navigator.AddView(wvm));
             Navigator.AddHomeView(new HomeViewModel(viewList, ApplicationConstants.HomeViewRegeredName, messagingService));

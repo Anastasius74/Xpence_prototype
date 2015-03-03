@@ -22,6 +22,7 @@
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompIsStorageOwner_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentIsStorageOwner}"/>
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompLayer_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentLayer}"/>
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompCore_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentCore}"/>
+                <DataGridTextColumn Width="Auto" Header="{x:Static shared:UIText.GRID_CompModule_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentModule}"/>
             </DataGrid.Columns>
         </DataGrid>
         
@@ -37,6 +38,7 @@
                 </DockPanel.Resources>
 
                 <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_NEW_Model}" Content="{StaticResource NewFigure}" Command="{Binding AddNewComponentCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_Update_Model}" Content="{StaticResource IncomeFigure}" Command="{Binding UpdateComponentCommand}"/>
                 <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_SAVE_Model}" Content="{StaticResource SaveFigure}" Command="{Binding SaveComponentCommand}"/>
                 <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_DELETE_Models}" Content="{StaticResource DeleteFigure}" Command="{Binding DeleteComponentsCommand}"/>
             </DockPanel>
@@ -52,6 +54,7 @@
                         <Binding Path="ComponentIsStorageOwner"/>
                         <Binding Path="ComponentLayer"/>
                         <Binding Path="ComponentCore"/>
+                        <Binding Path="ComponentModule"/>
                     </MultiBinding>
                 </GroupBox.Header>
                 <views:ComponentView />

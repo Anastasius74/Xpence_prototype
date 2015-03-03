@@ -33,25 +33,30 @@ namespace XPence.Services.Implementation
             return unitOfWork.Repository<TModel>().GetById(entityId);
         }
 
-        public long Create(TModel entity)
+        public long Create(TModel entityToCreate)
         {
-            unitOfWork.Repository<TModel>().Insert(entity);
-            return entity.GetDatabaseId().Value;
+            unitOfWork.Repository<TModel>().Insert(entityToCreate);
+            return entityToCreate.GetDatabaseId().Value;
         }
 
-        public void Save(TModel entity)
+        public void Update(TModel entityToUpdate)
         {
-            unitOfWork.Repository<TModel>().Insert(entity);
+            unitOfWork.Repository<TModel>().Update(entityToUpdate);
         }
 
-        public void Delete(TModel entity)
+        public void Save(TModel entityToSave)
         {
-            unitOfWork.Repository<TModel>().Delete(entity);
+            unitOfWork.Repository<TModel>().Insert(entityToSave);
         }
 
-        public void DeleteEntities(IEnumerable<TModel> entities)
+        public void Delete(TModel entityToDelete)
         {
-            unitOfWork.Repository<TModel>().DeleteAll(entities);   
+            unitOfWork.Repository<TModel>().Delete(entityToDelete);
+        }
+
+        public void DeleteEntities(IEnumerable<TModel> entitiesToDelete)
+        {
+            unitOfWork.Repository<TModel>().DeleteAll(entitiesToDelete);   
         }
 
         public void Commit()
@@ -76,6 +81,16 @@ namespace XPence.Services.Implementation
         public bool HasWorkToCommit
         {
             get { return unitOfWork.HasWork; }
+        }
+
+        public void EnsureStartTransaction()
+        {
+            unitOfWork.EnsureStartTransaction();
+        }
+
+        public void EnsureEndTransaction()
+        {
+            unitOfWork.EnsureEndTransaction();
         }
     }
 }

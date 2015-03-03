@@ -14,12 +14,12 @@ namespace XPence.ViewModels
 {
     public class AllComponentViewModel : WorkspaceViewModelBase
     {
-        private ExtendedObservableCollection<ComponentViewModel> components;
-        private ComponentViewModel selectedComponent;
         private readonly IEntityAccessService<Component> componentService;
         private readonly IMessagingService messagingService;
-        
-        public AllComponentViewModel(string registeredName, IMessagingService messagingService): base(registeredName)
+        private ExtendedObservableCollection<ComponentViewModel> components;
+        private ComponentViewModel selectedComponent;
+
+        public AllComponentViewModel(string registeredName, IMessagingService messagingService) : base(registeredName)
         {
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
@@ -27,18 +27,18 @@ namespace XPence.ViewModels
 
             componentService = new EntityAccessService<Component>();
             Components = new ExtendedObservableCollection<ComponentViewModel>();
-            
-            var list = componentService.SelectAll().Select(t => new ComponentViewModel(t));
-            Components.AddRange(list);
+
+            Refresh();
 
             //Initialize commands
-            AddNewComponentCommand = new RelayCommand(CreateComponent);
+            AddNewComponentCommand = new RelayCommand(CreateComponent, CanCreateComponent);
+            UpdateComponentCommand = new RelayCommand(UpdateComponent, CanUpdateComponent);
             SaveComponentCommand = new RelayCommand(SaveComponent, CanSaveComponent);
-            DeleteComponentsCommand = new RelayCommand(DeleteComponents);
+            DeleteComponentsCommand = new RelayCommand(DeleteComponents, CanDeleteComponents);
         }
 
         /// <summary>
-        /// Gets or sets the components viewable by the users.
+        ///     Gets or sets the components viewable by the users.
         /// </summary>
         public ExtendedObservableCollection<ComponentViewModel> Components
         {
@@ -53,14 +53,11 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the Selected component.
+        ///     Gets or sets the Selected component.
         /// </summary>
         public ComponentViewModel SelectedComponent
         {
-            get
-            {
-                return selectedComponent;
-            }
+            get { return selectedComponent; }
             set
             {
                 selectedComponent = value;
@@ -68,20 +65,56 @@ namespace XPence.ViewModels
             }
         }
 
+        private void Refresh()
+        {
+            Components.Clear();
+            var list = componentService.SelectAll().Select(t => new ComponentViewModel(t));
+            Components.AddRange(list);
+        }
+
         private void CreateComponent()
         {
+            componentService.EnsureStartTransaction();
             componentService.Create(SelectedComponent.ComponentEntity);
-            componentService.Commit();
+            messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Create);
+        }
+
+        private bool CanCreateComponent()
+        {
+            if (null == SelectedComponent)
+            {
+                return false;
+            }
+
+            return SelectedComponent.IsValid;
+        }
+
+        private void UpdateComponent()
+        {
+            componentService.EnsureStartTransaction();
+            componentService.Update(SelectedComponent.ComponentEntity);
+            messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Update);
+        }
+
+        private bool CanUpdateComponent()
+        {
+            if (null == SelectedComponent)
+            {
+                return false;
+            }
+
+            return SelectedComponent.IsValid;
         }
 
         /// <summary>
-        /// Save the selected transction.
+        ///     Save the selected transction.
         /// </summary>
         private void SaveComponent()
         {
-            //messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.SAVING_Entity_WAIT_MSG);
-            componentService.Save(SelectedComponent.ComponentEntity);
+            componentService.EnsureStartTransaction();
             componentService.Commit();
+            Refresh();
+            componentService.EnsureEndTransaction();
         }
 
         private bool CanSaveComponent()
@@ -95,45 +128,50 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Deletes the component marked.
-        /// If no component id marked, the selected component is deleted.
+        ///     Deletes the component marked.
+        ///     If no component id marked, the selected component is deleted.
         /// </summary>
         private void DeleteComponents()
         {
-            if (Components.Any())
+            var markedEntity = Components.Where(t => t.IsMarked);
+            var componentViewModels = markedEntity as IList<ComponentViewModel> ?? markedEntity.ToList();
+            if (componentViewModels.Any())
             {
-                var markedTrans = Components.Where(t => t.IsMarked);
-                IList<ComponentViewModel> componentViewModels = markedTrans as IList<ComponentViewModel> ?? markedTrans.ToList();
-                if (componentViewModels.Any())
-                {
-                    IEnumerable<Component> markedArray = componentViewModels.Select(t => t.ComponentEntity);
-                    messagingService.ShowProgressMessage(UIText.WAIT_SCREEN_HEADER, UIText.DELETING_Components_WAIT_MSG);
-                    componentService.DeleteEntities(markedArray);
-                    return;
-                }
+                var markedArray = componentViewModels.Select(t => t.ComponentEntity);
+                componentService.EnsureStartTransaction();
+                componentService.DeleteEntities(markedArray);
+                componentViewModels.ForEach(t => t.Refresh());
             }
-            messagingService.ShowMessage(InfoMessages.INF_MARK_FOR_DEL);
+            messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Del);
         }
 
+        private bool CanDeleteComponents()
+        {
+            return Components != null && Components.Any();
+        }
 
         #region Commands
 
         /// <summary>
-        /// Gets the command to save a Component.
+        ///     Gets the command to save a Component.
         /// </summary>
         public ICommand SaveComponentCommand { get; private set; }
 
         /// <summary>
-        /// Gets the command to create a new Component.
+        ///     Gets the command to create a new Component.
         /// </summary>
         public ICommand AddNewComponentCommand { get; private set; }
 
         /// <summary>
-        /// Gets the command to delete Components.
+        /// Gets the command to update a component.
+        /// </summary>
+        public ICommand UpdateComponentCommand { get; private set; }
+
+        /// <summary>
+        ///     Gets the command to delete Components.
         /// </summary>
         public ICommand DeleteComponentsCommand { get; private set; }
 
         #endregion
-
     }
 }

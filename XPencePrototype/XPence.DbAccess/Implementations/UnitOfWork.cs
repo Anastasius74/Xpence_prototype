@@ -47,6 +47,13 @@ namespace XPence.DbAccess.Implementations
             }
         }
 
+        public void EnsureEndTransaction()
+        {
+            HasWork = false;
+            Dispose();
+            IsInitialized = false;
+        }
+
         public static UnitOfWork GetInitialized()
         {
             var returnValue = new UnitOfWork();

@@ -97,6 +97,7 @@
     <Compile Include="Converters\ImageCropperControl.cs" />
     <Compile Include="Converters\ImageToBinaryConverter.cs" />
     <Compile Include="Converters\InverseBoolConverter.cs" />
+    <Compile Include="Converters\NodeHeaderConverter.cs" />
     <Compile Include="Converters\NullToBoolConverter.cs" />
     <Compile Include="Converters\PuncturedRect.cs" />
     <Compile Include="Converters\StringToColorConverter.cs" />
@@ -112,8 +113,8 @@
     <Compile Include="Views\AllComponentView.xaml.cs">
       <DependentUpon>AllComponentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AllNodeViewModel.xaml.cs">
-      <DependentUpon>AllNodeViewModel.xaml</DependentUpon>
+    <Compile Include="Views\AllNodeView.xaml.cs">
+      <DependentUpon>AllNodeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ApplicationView.xaml.cs">
       <DependentUpon>ApplicationView.xaml</DependentUpon>
@@ -156,6 +157,7 @@
     <None Include="Data\SimulinkDb.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Documentation\database.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,7 +185,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AllNodeViewModel.xaml">
+    <Page Include="Views\AllNodeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,7 +232,9 @@
       <Name>XPence.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Update.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\DefaultPicture.jpg" />
     <Resource Include="Resources\EXPenceIcon.ico" />

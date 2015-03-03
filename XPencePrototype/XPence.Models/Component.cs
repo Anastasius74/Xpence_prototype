@@ -25,6 +25,9 @@ namespace XPence.Models
        
         [Column("core")]
         public long? Core { get; set; }
+
+        [Column("module")]
+        public string Module { get; set; }
     
         public ICollection<Role> Roles { get; set; }
     }

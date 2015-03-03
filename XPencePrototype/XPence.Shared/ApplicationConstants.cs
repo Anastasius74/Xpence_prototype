@@ -5,7 +5,8 @@ namespace XPence.Shared
     public static class ApplicationConstants
     {
         public const string HomeViewRegeredName = "HomeView";
-        public const string AllComponentViewRegeredName = "AllComponentView";
+        public const string AllComponentViewRegesteredName = "AllComponentView";
+        public const string AllNodeViewRegesteredName = "AllNodeView";
         public const string HelpView = "HelpView";
 
         // Home Menu constants

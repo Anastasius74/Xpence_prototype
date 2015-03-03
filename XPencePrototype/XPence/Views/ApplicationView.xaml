@@ -21,6 +21,10 @@
             <views:AllComponentView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModels:AllNodeViewModel}">
+            <views:AllNodeView/>
+        </DataTemplate>
+
     </UserControl.Resources>
     <apex:ApexGrid Rows="Auto,Auto,Auto,*">
         <DockPanel Grid.Row="0" LastChildFill="False">

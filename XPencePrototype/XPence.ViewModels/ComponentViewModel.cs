@@ -1,5 +1,4 @@
-﻿
-using System.Linq;
+﻿using System.Linq;
 using XPence.Framework;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Models;
@@ -8,26 +7,30 @@ namespace XPence.ViewModels
 {
     public class ComponentViewModel : ViewModelBase
     {
-        private static readonly string[] PropertyNames = { "ComponentName", "ComponentIsStorageOwner", "ComponentLayer", "ComponentCore" };
+        private static readonly string[] PropertyNames =
+        {
+            "ComponentName", "ComponentIsStorageOwner", "ComponentLayer", "ComponentCore, ComponentModule"
+        };
+
         private bool isMarked;
 
         /// <summary>
-        /// Gets or sets the wrapped up component model.
+        ///     Gets or sets the wrapped up component model.
         /// </summary>
         public Component ComponentEntity { get; private set; }
 
         /// <summary>
-        /// Intializes an instance of <see cref="ComponentViewModel"/>.
+        ///     Intializes an instance of <see cref="ComponentViewModel" />.
         /// </summary>
-        /// <param name="entity"></param>
-        public ComponentViewModel(Component entity)
+        /// <param name="componentEntity"></param>
+        public ComponentViewModel(Component componentEntity)
         {
-            Guard.ArgumentNotNull("entity", "entity");
-            ComponentEntity = entity;
+            Guard.ArgumentNotNull("componentEntity", "componentEntity");
+            ComponentEntity = componentEntity;
         }
 
         /// <summary>
-        /// Gets the component id.
+        ///     Gets the component id.
         /// </summary>
         public long ComponentId
         {
@@ -35,43 +38,75 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the component name.
+        ///     Gets or sets the component name.
         /// </summary>
         public string ComponentName
         {
             get { return ComponentEntity.Name; }
-            set { ComponentEntity.Name = value; }
+            set
+            {
+                ComponentEntity.Name = value;
+                OnPropertyChanged(GetPropertyName(() => ComponentName));
+            }
         }
 
         /// <summary>
-        /// Gets or sets the component isStorageOwner.
+        ///     Gets or sets the component isStorageOwner.
         /// </summary>
         public long ComponentIsStorageOwner
         {
             get { return ComponentEntity.IsStorageOwner; }
-            set { ComponentEntity.IsStorageOwner = value; }
+            set
+            {
+                ComponentEntity.IsStorageOwner = value;
+                OnPropertyChanged(GetPropertyName(() => ComponentIsStorageOwner));
+            }
         }
 
         /// <summary>
-        /// Gets or sets the component layer.
+        ///     Gets or sets the component layer.
         /// </summary>
         public long ComponentLayer
         {
             get { return ComponentEntity.Layer; }
-            set { ComponentEntity.Layer = value; }
+            set
+            {
+                ComponentEntity.Layer = value;
+                OnPropertyChanged(GetPropertyName(() => ComponentLayer));
+            }
         }
 
         /// <summary>
-        /// Gets or sets the component core.
+        ///     Gets or sets the component core.
         /// </summary>
         public long? ComponentCore
         {
             get { return ComponentEntity.Core; }
-            set { ComponentEntity.Core = value; }
+            set
+            {
+                ComponentEntity.Core = value;
+                OnPropertyChanged(GetPropertyName(() => ComponentCore));
+            }
         }
 
         /// <summary>
-        /// Gets or sets if the instance of <see cref="ComponentViewModel"/> is marked in the UI.
+        /// Gets or sets the component module.
+        /// </summary>
+        public string ComponentModule
+        {
+            get
+            {
+                return ComponentEntity.Module;
+            }
+            set
+            {
+                ComponentEntity.Module = value;
+                OnPropertyChanged(GetPropertyName(() => ComponentModule));
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets if the instance of <see cref="ComponentViewModel" /> is marked in the UI.
         /// </summary>
         public bool IsMarked
         {
@@ -86,7 +121,7 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Returns if this instance of <see cref="ComponentViewModel"/> is valid for saving.
+        ///     Returns if this instance of <see cref="ComponentViewModel" /> is valid for saving.
         /// </summary>
         public bool IsValid
         {
@@ -94,8 +129,8 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// This method explicitly raises the property changed notification event for the <see cref="ComponentId"/>
-        /// property for this instance.
+        ///     This method explicitly raises the property changed notification event for the <see cref="ComponentId" />
+        ///     property for this instance.
         /// </summary>
         public void Refresh()
         {

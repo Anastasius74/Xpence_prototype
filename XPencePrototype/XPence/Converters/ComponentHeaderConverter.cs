@@ -10,7 +10,7 @@ namespace XPence.Converters
     public class ComponentHeaderConverter : IMultiValueConverter
     {
         /// <summary>
-        /// returns a header text for transaction.
+        /// returns a header text for component.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="targetType"></param>

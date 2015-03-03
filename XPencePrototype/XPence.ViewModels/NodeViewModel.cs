@@ -1,5 +1,4 @@
-﻿
-using System.Linq;
+﻿using System.Linq;
 using XPence.Framework;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Models;
@@ -8,26 +7,26 @@ namespace XPence.ViewModels
 {
     public class NodeViewModel : ViewModelBase
     {
-        private static readonly string[] PropertyNames = { "NetworkName" };
+        private static readonly string[] PropertyNames = {"NetworkName"};
         private bool isMarked;
 
         /// <summary>
-        /// Gets or sets the wrapped up Node model.
+        ///     Gets or sets the wrapped up Node model.
         /// </summary>
         public Node NodeEntity { get; private set; }
 
         /// <summary>
-        /// Intializes an instance of <see cref="NodeViewModel"/>.
+        ///     Intializes an instance of <see cref="NodeViewModel" />.
         /// </summary>
-        /// <param name="entity"></param>
-        public NodeViewModel(Node entity)
+        /// <param name="nodeEntity"></param>
+        public NodeViewModel(Node nodeEntity)
         {
-            Guard.ArgumentNotNull("entity", "entity");
-            NodeEntity = entity;
+            Guard.ArgumentNotNull("nodeEntity", "nodeEntity");
+            NodeEntity = nodeEntity;
         }
 
         /// <summary>
-        /// Gets the Node id.
+        ///     Gets the Node id.
         /// </summary>
         public long NodeId
         {
@@ -35,16 +34,20 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the Node network name.
+        ///     Gets or sets the Node network name.
         /// </summary>
-        public string NodeName
+        public string NetworkName
         {
             get { return NodeEntity.NetworkName; }
-            set { NodeEntity.NetworkName = value; }
+            set
+            {
+                NodeEntity.NetworkName = value;
+                OnPropertyChanged(GetPropertyName(() => NetworkName));
+            }
         }
 
         /// <summary>
-        /// Gets or sets if the instance of <see cref="NodeViewModel"/> is marked in the UI.
+        ///     Gets or sets if the instance of <see cref="NodeViewModel" /> is marked in the UI.
         /// </summary>
         public bool IsMarked
         {
@@ -59,7 +62,7 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Returns if this instance of <see cref="NodeViewModel"/> is valid for saving.
+        ///     Returns if this instance of <see cref="NodeViewModel" /> is valid for saving.
         /// </summary>
         public bool IsValid
         {
@@ -67,8 +70,8 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// This method explicitly raises the property changed notification event for the <see cref="NodeId"/>
-        /// property for this instance.
+        ///     This method explicitly raises the property changed notification event for the <see cref="NodeId" />
+        ///     property for this instance.
         /// </summary>
         public void Refresh()
         {
