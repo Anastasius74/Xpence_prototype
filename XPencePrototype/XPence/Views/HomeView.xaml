@@ -9,7 +9,7 @@
     <UserControl.Resources>
 
         <DataTemplate DataType="{x:Type viewModels:AllComponentViewModel}">
-            <Button Style="{DynamicResource TileButtonStyle}" Content="Components"
+            <Button Content="Components"
                     ToolTip="{Binding DisplayName}" Command="{Binding DataContext.GoToCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding RegisteredName}"/>
         </DataTemplate>
 

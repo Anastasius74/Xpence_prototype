@@ -417,3 +417,91 @@
 2015-03-02 19:10:46,691 [10] DEBUG - App.OnExit --- Application closing.
 2015-03-02 19:10:50,253 [10] DEBUG - App.OnStartup --- Staring up.
 2015-03-02 19:11:00,100 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 20:42:59,920 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 20:44:49,215 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 20:44:54,531 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 20:45:36,853 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 20:46:24,876 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 21:00:39,398 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 21:01:11,958 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 21:01:36,222 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 21:01:38,965 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 21:01:51,931 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 21:01:56,863 [9] DEBUG - SettingsViewModel.PromptUserToSaveAppearance --- User changed apperance.
+2015-03-02 21:01:58,382 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 21:02:00,261 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 21:02:08,634 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 23:43:11,047 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:43:17,656 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 23:50:02,134 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:50:07,944 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-02 23:53:13,199 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:53:37,587 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:53:47,913 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-02 23:55:04,750 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:55:21,138 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:55:33,953 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:56:00,355 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:56:51,013 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:57:18,672 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:57:30,475 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-02 23:57:54,230 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 00:01:40,483 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 00:02:24,789 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 00:03:18,235 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 00:04:33,362 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 00:06:32,647 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:06:01,771 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:06:04,534 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:06:15,033 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:06:42,342 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:07:50,018 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:07:52,546 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:08:05,895 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:10:02,993 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:10:30,036 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:10:33,178 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:11:01,250 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:11:03,428 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:11:13,789 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:13:11,633 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:18:40,245 [10] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:19:40,579 [10] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:19:42,932 [9] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:19:54,365 [9] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:20:28,443 [8] DEBUG - App.OnStartup --- Staring up.
+2015-03-03 01:22:05,390 [8] DEBUG - App.AppDispatcherUnhandledException --- System.NullReferenceException: Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.
+   bei XPence.DbAccess.Implementations.UnitOfWork.Commit() in d:\dev\Xpence_prototype\Xpence_prototype\XPencePrototype\XPence.DbAccess\Implementations\UnitOfWork.cs:Zeile 100.
+   bei XPence.Services.Implementation.EntityAccessService`1.Commit() in d:\dev\Xpence_prototype\Xpence_prototype\XPencePrototype\XPence.Services\Implementation\EntityAccessService.cs:Zeile 61.
+   bei XPence.ViewModels.AllComponentViewModel.CreateComponent() in d:\dev\Xpence_prototype\Xpence_prototype\XPencePrototype\XPence.ViewModels\AllComponentViewModel.cs:Zeile 74.
+   bei XPence.Infrastructure.CoreClasses.RelayCommand.Execute(Object parameter) in d:\dev\Xpence_prototype\Xpence_prototype\XPencePrototype\XPence.Infrastructure\CoreClasses\RelayCommand.cs:Zeile 144.
+   bei MS.Internal.Commands.CommandHelpers.CriticalExecuteCommandSource(ICommandSource commandSource, Boolean userInitiated)
+   bei System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   bei System.Windows.Controls.Button.OnClick()
+   bei System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   bei System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   bei System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   bei System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   bei System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   bei System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   bei System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   bei System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   bei System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)
+   bei System.Windows.Input.InputManager.ProcessStagingArea()
+   bei System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   bei System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   bei System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   bei System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   bei System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   bei MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   bei MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   bei MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)
+2015-03-03 01:22:11,638 [8] DEBUG - App.OnExit --- Application closing.
+2015-03-03 01:23:06,473 [8] DEBUG - App.OnStartup --- Staring up.
