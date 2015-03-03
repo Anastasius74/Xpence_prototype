@@ -46,7 +46,7 @@
 
         <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
             <GroupBox Width="420"
-                      IsEnabled="{Binding Converter={StaticResource nullToBool}}"  
+                      
                       DataContext="{Binding SelectedComponent, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
                 <GroupBox.Header>
                     <MultiBinding Converter="{StaticResource headerTextConv}">

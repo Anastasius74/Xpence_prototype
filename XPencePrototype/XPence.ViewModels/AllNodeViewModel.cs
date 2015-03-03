@@ -27,8 +27,8 @@ namespace XPence.ViewModels
             this.messagingService = messagingService;
 
             nodeService = new EntityAccessService<Node>();
-            nodes = new ExtendedObservableCollection<NodeViewModel>();
-
+            Nodes = new ExtendedObservableCollection<NodeViewModel>();
+           
             Refresh();
 
             //Initialize commands
@@ -68,9 +68,9 @@ namespace XPence.ViewModels
 
         private void Refresh()
         {
-            nodes.Clear();
+            Nodes.Clear();
             var list = nodeService.SelectAll().Select(t => new NodeViewModel(t));
-            nodes.AddRange(list);
+            Nodes.AddRange(list);
         }
 
         private void CreateNode()

@@ -47,7 +47,7 @@
                         <Binding Path="NetworkName"/>
                     </MultiBinding>
                 </GroupBox.Header>
-                <views:NodeView />
+                <views:NodeView/>
             </GroupBox>
         </DockPanel>
 

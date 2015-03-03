@@ -7,7 +7,7 @@ namespace XPence.ViewModels
 {
     public class NodeViewModel : ViewModelBase
     {
-        private static readonly string[] PropertyNames = {"NetworkName"};
+        private static readonly string[] PropertyNames = { "NetworkName" };
         private bool isMarked;
 
         /// <summary>
