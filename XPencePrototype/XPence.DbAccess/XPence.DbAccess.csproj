@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\Configuration\ComponentMap.cs" />
+    <Compile Include="Implementations\Configuration\LayerMap.cs" />
     <Compile Include="Implementations\DatabaseInstanceManager.cs" />
     <Compile Include="Implementations\GenericRepository.cs" />
     <Compile Include="Implementations\SimulinkContext.cs" />

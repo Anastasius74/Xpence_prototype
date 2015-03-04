@@ -201,6 +201,9 @@
   <data name="GRID_NodeName_HEADER_TEXT" xml:space="preserve">
     <value>Network name</value>
   </data>
+  <data name="GRID_RoleName_HEADER_TEXT" xml:space="preserve">
+    <value>name</value>
+  </data>
   <data name="HELP_WINDOW_HEADER" xml:space="preserve">
     <value>About XPense</value>
   </data>
@@ -329,6 +332,9 @@
   </data>
   <data name="NODE_NetworkName_LABEL_TXT" xml:space="preserve">
     <value>Network name:</value>
+  </data>
+  <data name="ROLE_Name_LABEL_TXT" xml:space="preserve">
+    <value>Name:</value>
   </data>
   <data name="WAIT_SCREEN_HEADER" xml:space="preserve">
     <value>Please wait</value>

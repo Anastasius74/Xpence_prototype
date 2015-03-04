@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using XPence.Infrastructure.BaseClasses;
@@ -7,34 +9,89 @@ using XPence.Infrastructure.CoreClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Models;
 using XPence.Services.Implementation;
-using XPence.Services.Interfaces;
 using XPence.Shared;
 
 namespace XPence.ViewModels
 {
     public class AllComponentViewModel : WorkspaceViewModelBase
     {
-        private readonly IEntityAccessService<Component> componentService;
         private readonly IMessagingService messagingService;
         private ExtendedObservableCollection<ComponentViewModel> components;
         private ComponentViewModel selectedComponent;
+        private ObservableCollection<ComponentViewModel> selectedComponents;
+        private readonly ObservableCollection<ComponentViewModel> copiedComponents;
+        private readonly EntityAccessService<Component> entityService; 
 
         public AllComponentViewModel(string registeredName, IMessagingService messagingService) : base(registeredName)
         {
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
-
-            componentService = new EntityAccessService<Component>();
+            EntityAccessService<Component>.Initialize();
+            entityService = new EntityAccessService<Component>();
             Components = new ExtendedObservableCollection<ComponentViewModel>();
-
-            Refresh();
+            copiedComponents = new ObservableCollection<ComponentViewModel>();
+            SelectedComponents = new ObservableCollection<ComponentViewModel>();
 
             //Initialize commands
             AddNewComponentCommand = new RelayCommand(CreateComponent, CanCreateComponent);
             UpdateComponentCommand = new RelayCommand(UpdateComponent, CanUpdateComponent);
             SaveComponentCommand = new RelayCommand(SaveComponent, CanSaveComponent);
             DeleteComponentsCommand = new RelayCommand(DeleteComponents, CanDeleteComponents);
+            SelectionChangedCommand = new RelayCommand<IList>(GetSelectedComponents);
+            CopyCommand = new RelayCommand(CopyComponent, CanCopyComponent);
+            PasteCommand = new RelayCommand(PasteComponent, CanPasteComponent);
+
+            Refresh();
+        }
+
+        private bool CanPasteComponent()
+        {
+            return copiedComponents != null && copiedComponents.Count > 0;
+        }
+
+        private void PasteComponent()
+        {
+            entityService.EnsureStartTransaction();
+            foreach (var componentViewModel in SelectedComponents)
+            {
+                entityService.Create(componentViewModel.ComponentEntity);
+            }
+            
+            messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Create);
+        }
+
+        private bool CanCopyComponent()
+        {
+            return SelectedComponents != null && SelectedComponents.Count > 0;
+        }
+
+        private void CopyComponent()
+        {
+            copiedComponents.Clear();
+
+            foreach (var componentViewModel in SelectedComponents)
+            {
+                copiedComponents.Add(componentViewModel);
+            }
+
+        }
+
+        private void GetSelectedComponents(IList componentList)
+        {
+            SelectedComponents.Clear();
+
+            var collection = componentList.Cast<ComponentViewModel>();
+            var componentViewModels = collection as IList<ComponentViewModel> ?? collection.ToList();
+
+            if (componentViewModels.Count > 0)
+            {
+                SelectedComponent = componentViewModels.Select(x => x).Last();
+                foreach (ComponentViewModel item in componentViewModels)
+                {
+                    SelectedComponents.Add(item);
+                }
+            }
         }
 
         /// <summary>
@@ -49,6 +106,19 @@ namespace XPence.ViewModels
                     return;
                 components = value;
                 OnPropertyChanged(GetPropertyName(() => Components));
+            }
+        }
+
+        public ObservableCollection<ComponentViewModel> SelectedComponents
+        {
+            get
+            {
+                return selectedComponents;
+            }
+            set
+            {
+                selectedComponents = value;
+                OnPropertyChanged(GetPropertyName(() => SelectedComponents));
             }
         }
 
@@ -68,14 +138,15 @@ namespace XPence.ViewModels
         private void Refresh()
         {
             Components.Clear();
-            var list = componentService.SelectAll().Select(t => new ComponentViewModel(t));
+            var list = entityService.SelectAll().Select(t => new ComponentViewModel(t));
             Components.AddRange(list);
         }
 
         private void CreateComponent()
         {
-            componentService.EnsureStartTransaction();
-            componentService.Create(SelectedComponent.ComponentEntity);
+            entityService.EnsureStartTransaction();
+            entityService.Create(SelectedComponent.ComponentEntity);
+            Refresh();
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Create);
         }
 
@@ -91,8 +162,8 @@ namespace XPence.ViewModels
 
         private void UpdateComponent()
         {
-            componentService.EnsureStartTransaction();
-            componentService.Update(SelectedComponent.ComponentEntity);
+            entityService.EnsureStartTransaction();
+            entityService.Update(SelectedComponent.ComponentEntity);
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Update);
         }
 
@@ -111,10 +182,10 @@ namespace XPence.ViewModels
         /// </summary>
         private void SaveComponent()
         {
-            componentService.EnsureStartTransaction();
-            componentService.Commit();
+            entityService.EnsureStartTransaction();
+            entityService.Commit();
             Refresh();
-            componentService.EnsureEndTransaction();
+            entityService.EnsureEndTransaction();
         }
 
         private bool CanSaveComponent()
@@ -133,21 +204,16 @@ namespace XPence.ViewModels
         /// </summary>
         private void DeleteComponents()
         {
-            var markedEntity = Components.Where(t => t.IsMarked);
-            var componentViewModels = markedEntity as IList<ComponentViewModel> ?? markedEntity.ToList();
-            if (componentViewModels.Any())
-            {
-                var markedArray = componentViewModels.Select(t => t.ComponentEntity);
-                componentService.EnsureStartTransaction();
-                componentService.DeleteEntities(markedArray);
-                componentViewModels.ForEach(t => t.Refresh());
-            }
+            List<Component> items = SelectedComponents.Select(componentViewModel => componentViewModel.ComponentEntity).ToList();
+            entityService.EnsureStartTransaction();
+            entityService.DeleteEntities(items);
+            SelectedComponents.ForEach(t => t.Refresh());
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Del);
         }
 
         private bool CanDeleteComponents()
         {
-            return Components != null && Components.Any();
+            return SelectedComponents != null && SelectedComponents.Count > 0;
         }
 
         #region Commands
@@ -171,6 +237,21 @@ namespace XPence.ViewModels
         ///     Gets the command to delete Components.
         /// </summary>
         public ICommand DeleteComponentsCommand { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the selected componentes.
+        /// </summary>
+        public RelayCommand<IList> SelectionChangedCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the copied components.
+        /// </summary>
+        public ICommand CopyCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pasted components.
+        /// </summary>
+        public ICommand PasteCommand { get; set; }
 
         #endregion
     }

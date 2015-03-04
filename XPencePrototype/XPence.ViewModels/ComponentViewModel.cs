@@ -12,8 +12,6 @@ namespace XPence.ViewModels
             "ComponentName", "ComponentIsStorageOwner", "ComponentLayer", "ComponentCore, ComponentModule"
         };
 
-        private bool isMarked;
-
         /// <summary>
         ///     Gets or sets the wrapped up component model.
         /// </summary>
@@ -66,15 +64,20 @@ namespace XPence.ViewModels
         /// <summary>
         ///     Gets or sets the component layer.
         /// </summary>
-        public long ComponentLayer
+        public string ComponentLayer
         {
-            get { return ComponentEntity.Layer; }
+            get
+            {
+                return ComponentEntity.Layer.Label;
+            }
             set
             {
-                ComponentEntity.Layer = value;
+                ComponentEntity.Layer.Label = value;
                 OnPropertyChanged(GetPropertyName(() => ComponentLayer));
             }
         }
+
+        public Layer Layer { get; set; }
 
         /// <summary>
         ///     Gets or sets the component core.
@@ -102,21 +105,6 @@ namespace XPence.ViewModels
             {
                 ComponentEntity.Module = value;
                 OnPropertyChanged(GetPropertyName(() => ComponentModule));
-            }
-        }
-
-        /// <summary>
-        ///     Gets or sets if the instance of <see cref="ComponentViewModel" /> is marked in the UI.
-        /// </summary>
-        public bool IsMarked
-        {
-            get { return isMarked; }
-            set
-            {
-                if (value == isMarked)
-                    return;
-                isMarked = value;
-                OnPropertyChanged(GetPropertyName(() => IsMarked));
             }
         }
 

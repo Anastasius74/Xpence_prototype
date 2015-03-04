@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace XPence.Views
 {
     /// <summary>
-    /// Interaction logic for ApplicationView.xaml
+    /// Interaction logic for AllRoleView.xaml
     /// </summary>
-    public partial class ApplicationView : UserControl
+    public partial class AllRoleView : UserControl
     {
-        public ApplicationView()
+        public AllRoleView()
         {
             InitializeComponent();
         }

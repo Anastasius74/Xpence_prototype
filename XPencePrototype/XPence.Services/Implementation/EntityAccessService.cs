@@ -6,14 +6,13 @@ using XPence.Services.Interfaces;
 
 namespace XPence.Services.Implementation
 {
-    public class EntityAccessService<TModel> : IEntityAccessService<TModel> where TModel : class 
+    public class EntityAccessService<TModel> : IEntityAccessService<TModel> where TModel : class
     {
-        private readonly UnitOfWork unitOfWork;
+        public static UnitOfWork unitOfWork;
 
-        public EntityAccessService()
+        public static void InitializeEntityAccessService()
         {
-            unitOfWork = new UnitOfWork();
-            unitOfWork.Initialize();
+            Initialize();
         }
 
         public ObservableCollection<TModel> SelectAll()
@@ -67,12 +66,13 @@ namespace XPence.Services.Implementation
             }
         }
 
-        public bool Initialized { get; private set; }
+        public static bool Initialized { get; private set; }
 
-        public void Initialize()
+        public static void Initialize()
         {
             if (!Initialized)
             {
+                unitOfWork = new UnitOfWork();
                 unitOfWork.Initialize();
                 Initialized = true;
             }

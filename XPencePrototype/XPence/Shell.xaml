@@ -9,7 +9,7 @@
                       xmlns:converters="clr-namespace:XPence.Converters"
                       xmlns:nativeControls="clr-namespace:XPence.Controls"
                       attachedBehaviors:ElementLoadingBehavior.InitializeDataContextWhenLoaded="True"
-                      Title="XPence" Icon="/Resources/ExpenseIcon.png"
+                      Title="XPence"
                       WindowState="Maximized" ShowTitleBar="False">
 
     <controls:MetroWindow.Resources>

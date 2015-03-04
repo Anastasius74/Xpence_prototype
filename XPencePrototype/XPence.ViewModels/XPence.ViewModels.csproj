@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AllComponentViewModel.cs" />
     <Compile Include="AllNodeViewModel.cs" />
+    <Compile Include="AllRoleViewModel.cs" />
     <Compile Include="AppData.cs" />
     <Compile Include="ApplicationViewModel.cs" />
     <Compile Include="ComponentViewModel.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="NodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleViewModel.cs" />
     <Compile Include="SettingsViewModel.cs" />
     <Compile Include="UserViewModel.cs" />
   </ItemGroup>

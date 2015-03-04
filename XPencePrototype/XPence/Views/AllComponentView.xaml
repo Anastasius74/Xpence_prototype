@@ -4,26 +4,34 @@
               xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
              xmlns:converters="clr-namespace:XPence.Converters"
-             xmlns:views="clr-namespace:XPence.Views">
+             xmlns:views="clr-namespace:XPence.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
     <UserControl.Resources>
         <!--Converters-->
-        <converters:NullToBoolConverter x:Key="nullToBool"/>
-        <converters:ComponentHeaderConverter x:Key="headerTextConv"/>
+        <converters:ComponentHeaderConverter x:Key="HeaderTextConv"/>
     </UserControl.Resources>
     <apex:ApexGrid Rows="*,Auto,Auto" Columns="*,Auto" HorizontalAlignment="Stretch">
 
         <!--The grid-->
-        <DataGrid Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch" SelectedItem="{Binding SelectedComponent}"
-                      FontSize="14" ItemsSource="{Binding Components}" AutoGenerateColumns="False">
+        <DataGrid x:Name="ComponentGrid" Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14" ItemsSource="{Binding Components}" AutoGenerateColumns="False">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding SelectedItems, ElementName=ComponentGrid}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Width="20" Binding="{Binding IsMarked}" />
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompName_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentName}"/>
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompIsStorageOwner_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentIsStorageOwner}"/>
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompLayer_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentLayer}"/>
                 <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_CompCore_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentCore}"/>
                 <DataGridTextColumn Width="Auto" Header="{x:Static shared:UIText.GRID_CompModule_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding ComponentModule}"/>
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Copy" Command="{Binding CopyCommand}"></MenuItem>
+                    <MenuItem Header="Paste" Command="{Binding PasteCommand}"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
         
         <!--The button bar-->
@@ -49,7 +57,7 @@
                       
                       DataContext="{Binding SelectedComponent, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
                 <GroupBox.Header>
-                    <MultiBinding Converter="{StaticResource headerTextConv}">
+                    <MultiBinding Converter="{StaticResource HeaderTextConv}">
                         <Binding Path="ComponentName"/>
                         <Binding Path="ComponentIsStorageOwner"/>
                         <Binding Path="ComponentLayer"/>

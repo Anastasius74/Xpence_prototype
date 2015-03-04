@@ -57,17 +57,14 @@ namespace XPence.ViewModels
         {
             //Configure the navigator
             Navigator = NavigatorFactory.GetNavigator();
-            //var viewList = new List<WorkspaceViewModelBase>()
-            //                   {
-            //                       new AllTransactionViewModel(isUserAdmin,ApplicationConstants.ALLEXPENSES_VIEW_REGERED_NAME,userRepository,transactionRepository,messagingService),
-            //                       new ManageViewModel(ApplicationConstants.MANAGE_VIEW_REGERED_NAME,userRepository,messagingService,isUserAdmin)
-            //                   };
-            //viewList.ForEach(wvm => Navigator.AddView(wvm));
+
             var viewList = new List<WorkspaceViewModelBase>
             {
                 new AllComponentViewModel(ApplicationConstants.AllComponentViewRegesteredName, messagingService),
-                new AllNodeViewModel(ApplicationConstants.AllNodeViewRegesteredName, messagingService)
+                new AllNodeViewModel(ApplicationConstants.AllNodeViewRegesteredName, messagingService),
+                new AllRoleViewModel(ApplicationConstants.AllRoleViewRegesteredName, messagingService)
             };
+
             viewList.ForEach(wvm => Navigator.AddView(wvm));
             Navigator.AddHomeView(new HomeViewModel(viewList, ApplicationConstants.HomeViewRegeredName, messagingService));
             Navigator.PropertyChanged += NavigatorPropertyChanged;

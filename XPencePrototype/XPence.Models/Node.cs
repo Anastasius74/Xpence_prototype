@@ -15,7 +15,7 @@ namespace XPence.Models
         [Column("network_name")]
         public string NetworkName { get; set; }
 
-        public ICollection<Role> Roles { get; set; }
+        //public ICollection<Role> Roles { get; set; }
 
         public static Node Create(long id, string networkName)
         {

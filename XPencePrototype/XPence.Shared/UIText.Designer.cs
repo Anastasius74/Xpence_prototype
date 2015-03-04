@@ -367,6 +367,15 @@ namespace XPence.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to name.
+        /// </summary>
+        public static string GRID_RoleName_HEADER_TEXT {
+            get {
+                return ResourceManager.GetString("GRID_RoleName_HEADER_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About XPense.
         /// </summary>
         public static string HELP_WINDOW_HEADER {
@@ -516,6 +525,15 @@ namespace XPence.Shared {
         public static string REENTER_NEW_PASSOWRD_LABEL_TEXT {
             get {
                 return ResourceManager.GetString("REENTER_NEW_PASSOWRD_LABEL_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string ROLE_Name_LABEL_TXT {
+            get {
+                return ResourceManager.GetString("ROLE_Name_LABEL_TXT", resourceCulture);
             }
         }
         

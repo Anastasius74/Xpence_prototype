@@ -7,6 +7,7 @@ namespace XPence.Shared
         public const string HomeViewRegeredName = "HomeView";
         public const string AllComponentViewRegesteredName = "AllComponentView";
         public const string AllNodeViewRegesteredName = "AllNodeView";
+        public const string AllRoleViewRegesteredName = "AllRoleView";
         public const string HelpView = "HelpView";
 
         // Home Menu constants

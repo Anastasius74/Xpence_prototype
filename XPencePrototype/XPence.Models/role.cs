@@ -14,7 +14,7 @@ namespace XPence.Models
         [Column("name")]
         public string Name { get; set; }
 
-        public ICollection<Component> Components { get; set; }
-        public ICollection<Node> Nodes { get; set; }
+        //public ICollection<Component> Components { get; set; }
+        //public ICollection<Node> Nodes { get; set; }
     }
 }

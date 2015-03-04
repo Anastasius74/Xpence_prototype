@@ -5,7 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
+using System.Reflection;
+using XPence.DbAccess.Implementations.Configuration;
 using XPence.DbAccess.Interfaces;
 using XPence.Framework.XmlSerialization;
 using XPence.Models;
@@ -432,22 +435,10 @@ namespace XPence.DbAccess.Implementations
         /// <param name="modelBuilder">The builder that defines the model for the context being created.</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new LayerMap());
+            modelBuilder.Configurations.Add(new ComponentMap());
+
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Role>().HasMany(t => t.Components).WithMany(t => t.Roles).Map(m =>
-            {
-                m.ToTable("Component_role");
-                m.MapLeftKey("Component");
-                m.MapRightKey("Role");
-            });
-
-            modelBuilder.Entity<Role>().HasMany(t => t.Nodes).WithMany(t => t.Roles).Map(m =>
-            {
-                m.ToTable("Node_Role");
-                m.MapLeftKey("Node");
-                m.MapRightKey("Role");
-            });
-            Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

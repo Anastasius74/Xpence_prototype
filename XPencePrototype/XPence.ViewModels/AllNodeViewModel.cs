@@ -7,17 +7,16 @@ using XPence.Infrastructure.CoreClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Models;
 using XPence.Services.Implementation;
-using XPence.Services.Interfaces;
 using XPence.Shared;
 
 namespace XPence.ViewModels
 {
     public class AllNodeViewModel : WorkspaceViewModelBase
     {
-        private readonly IEntityAccessService<Node> nodeService;
         private readonly IMessagingService messagingService;
         private ExtendedObservableCollection<NodeViewModel> nodes;
         private NodeViewModel selectedNode;
+        private readonly EntityAccessService<Node> entityService; 
 
         public AllNodeViewModel(string registeredName, IMessagingService messagingService)
             : base(registeredName)
@@ -25,10 +24,9 @@ namespace XPence.ViewModels
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
-
-            nodeService = new EntityAccessService<Node>();
+            EntityAccessService<Node>.Initialize();
+            entityService = new EntityAccessService<Node>();
             Nodes = new ExtendedObservableCollection<NodeViewModel>();
-           
             Refresh();
 
             //Initialize commands
@@ -69,14 +67,14 @@ namespace XPence.ViewModels
         private void Refresh()
         {
             Nodes.Clear();
-            var list = nodeService.SelectAll().Select(t => new NodeViewModel(t));
+            var list = entityService.SelectAll().Select(t => new NodeViewModel(t));
             Nodes.AddRange(list);
         }
 
         private void CreateNode()
         {
-            nodeService.EnsureStartTransaction();
-            nodeService.Create(SelectedNode.NodeEntity);
+            entityService.EnsureStartTransaction();
+            entityService.Create(SelectedNode.NodeEntity);
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Create);
         }
 
@@ -91,8 +89,8 @@ namespace XPence.ViewModels
 
         private void UpdateNode()
         {
-            nodeService.EnsureStartTransaction();
-            nodeService.Update(SelectedNode.NodeEntity);
+            entityService.EnsureStartTransaction();
+            entityService.Update(SelectedNode.NodeEntity);
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Update);
         }
 
@@ -111,10 +109,10 @@ namespace XPence.ViewModels
         /// </summary>
         private void SaveNode()
         {
-            nodeService.EnsureStartTransaction();
-            nodeService.Commit();
+            entityService.EnsureStartTransaction();
+            entityService.Commit();
             Refresh();
-            nodeService.EnsureEndTransaction();
+            entityService.EnsureEndTransaction();
         }
 
         private bool CanSaveNode()
@@ -138,8 +136,8 @@ namespace XPence.ViewModels
             if (nodeViewModels.Any())
             {
                 var markedArray = nodeViewModels.Select(t => t.NodeEntity);
-                nodeService.EnsureStartTransaction();
-                nodeService.DeleteEntities(markedArray);
+                entityService.EnsureStartTransaction();
+                entityService.DeleteEntities(markedArray);
                 nodeViewModels.ForEach(t => t.Refresh());
             }
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Del);

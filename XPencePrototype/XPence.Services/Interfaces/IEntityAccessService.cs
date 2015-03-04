@@ -16,8 +16,6 @@ namespace XPence.Services.Interfaces
         void Delete(TEntity entityToDelete);
         void DeleteEntities(IEnumerable<TEntity> entitiesToDelete);
         void Commit();
-        bool Initialized { get; }
-        void Initialize();
         bool HasWorkToCommit { get; }
         void EnsureStartTransaction();
         void EnsureEndTransaction();
