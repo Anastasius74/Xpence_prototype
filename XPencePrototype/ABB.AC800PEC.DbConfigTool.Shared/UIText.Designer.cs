@@ -412,7 +412,7 @@ namespace ABB.AC800PEC.DbConfigTool.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login to XPence.
+        ///   Looks up a localized string similar to Login to ABB.AC800PEC.DbConfigTool.
         /// </summary>
         public static string LOGIN_SCREEN_HEADER {
             get {

@@ -217,7 +217,7 @@
     <value>Login</value>
   </data>
   <data name="LOGIN_SCREEN_HEADER" xml:space="preserve">
-    <value>Login to XPence</value>
+    <value>Login to ABB.AC800PEC.DbConfigTool</value>
   </data>
   <data name="MANAGE_VIEW_HEADER" xml:space="preserve">
     <value>Manage</value>

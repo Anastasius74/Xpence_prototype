@@ -256,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\DefaultPicture.jpg" />
-    <Resource Include="Resources\EABB.AC800PEC.DbConfigToolIcon.ico" />
     <Resource Include="Resources\ExpenseIcon.png" />
     <Resource Include="Resources\Sid.png" />
   </ItemGroup>

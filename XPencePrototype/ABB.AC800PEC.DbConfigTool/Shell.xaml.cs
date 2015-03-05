@@ -2,7 +2,7 @@
 using System.Reflection;
 using MahApps.Metro.Controls;
 
-namespace XPence
+namespace ABB.AC800PEC.DbConfigTool
 {
     /// <summary>
     /// Interaction logic for Shell.xaml

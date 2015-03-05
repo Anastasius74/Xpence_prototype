@@ -9,7 +9,7 @@
                       xmlns:converters="clr-namespace:ABB.AC800PEC.DbConfigTool.Converters"
                       xmlns:nativeControls="clr-namespace:ABB.AC800PEC.DbConfigTool.Controls"
                       attachedBehaviors:ElementLoadingBehavior.InitializeDataContextWhenLoaded="True"
-                      Title="XPence"
+                      Title="ABB.AC800PEC.DbConfigTool"
                       WindowState="Maximized" ShowTitleBar="False">
 
     <controls:MetroWindow.Resources>

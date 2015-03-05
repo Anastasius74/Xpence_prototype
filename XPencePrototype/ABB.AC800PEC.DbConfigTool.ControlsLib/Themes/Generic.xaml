@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ControlsLib="clr-namespace:XPence.ControlsLib">
+                    xmlns:ControlsLib="clr-namespace:ABB.AC800PEC.DbConfigTool.ControlsLib">
 
     <Style TargetType="{x:Type ControlsLib:NavigationButtonControl}">
         <Setter Property="MaxWidth" Value="50"/>

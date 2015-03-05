@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="XPence.Views.SettingsView"
+﻿<UserControl x:Class="ABB.AC800PEC.DbConfigTool.Views.SettingsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
-             xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
-             xmlns:cnv="clr-namespace:XPence.Converters"
-             xmlns:utility="clr-namespace:XPence.Infrastructure.Utility;assembly=XPence.Infrastructure"
+             xmlns:shared="clr-namespace:ABB.AC800PEC.DbConfigTool.Shared;assembly=ABB.AC800PEC.DbConfigTool.Shared"
+             xmlns:cnv="clr-namespace:ABB.AC800PEC.DbConfigTool.Converters"
+             xmlns:utility="clr-namespace:ABB.AC800PEC.DbConfigTool.Infrastructure.Utility;assembly=ABB.AC800PEC.DbConfigTool.Infrastructure"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>

@@ -7,7 +7,7 @@ using ABB.AC800PEC.DbConfigTool.Shared;
 using ABB.AC800PEC.DbConfigTool.ViewModels;
 using ABB.AC800PEC.DbConfigTool.Views;
 
-namespace XPence
+namespace ABB.AC800PEC.DbConfigTool
 {
     /// <summary>
     /// Interaction logic for App.xaml

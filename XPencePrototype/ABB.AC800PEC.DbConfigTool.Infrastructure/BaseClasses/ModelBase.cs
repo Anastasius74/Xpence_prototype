@@ -1,5 +1,5 @@
 ﻿/***************************************************************************************************
- * PROJECT : XPence
+ * PROJECT : ABB.AC800PEC.DbConfigTool
  * PROJECT DESCRIPTION : A metro style, smart client expense tracking software.
  * AUTHOR : Siddhartha S
  * DISCLAIMER : This code is licensed under CPOL. You are free to use this in your project.

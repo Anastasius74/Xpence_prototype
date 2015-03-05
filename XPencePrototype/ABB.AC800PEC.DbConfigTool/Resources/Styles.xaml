@@ -1,12 +1,12 @@
-﻿<!--PROJECT : XPence
+﻿<!--PROJECT : ABB.AC800PEC.DbConfigTool
 PROJECT DESCRIPTION : A metro style, smart client expense tracking software.
 AUTHOR : Siddhartha S
 DISCLAIMER : This code is licensed under CPOL. You are free to use this in your project.
 The author takes no liabilities for any damage caused because of this code. Use at your own risk.-->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:nativeControls="clr-namespace:XPence.Controls"
-                    xmlns:controlsLib="clr-namespace:XPence.ControlsLib;assembly=XPence.ControlsLib">
+                    xmlns:nativeControls="clr-namespace:ABB.AC800PEC.DbConfigTool.Controls"
+                    xmlns:controlsLib="clr-namespace:ABB.AC800PEC.DbConfigTool.ControlsLib;assembly=ABB.AC800PEC.DbConfigTool.ControlsLib">
     <!--Converters-->
 
     <SolidColorBrush x:Key="ButtonBarBackGroundBrush" Color="#FF595959"/>
