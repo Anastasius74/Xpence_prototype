@@ -24,8 +24,7 @@ namespace XPence.ViewModels
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
-            EntityAccessService<Role>.Initialize();
-            entityService = new EntityAccessService<Role>();
+            entityService = EntityAccessService<Role>.Instance();
             Roles = new ExtendedObservableCollection<RoleViewModel>();
 
             Refresh();

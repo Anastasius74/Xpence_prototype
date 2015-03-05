@@ -8,18 +8,25 @@ namespace XPence.Services.Implementation
 {
     public class EntityAccessService<TModel> : IEntityAccessService<TModel> where TModel : class
     {
-        public static UnitOfWork unitOfWork;
+        private static EntityAccessService<TModel> entityAccessServiceInstance;
+        private readonly UnitOfWork unitOfWork;
 
-        public static void InitializeEntityAccessService()
+        public EntityAccessService()
         {
+            unitOfWork = new UnitOfWork();
             Initialize();
+        }
+
+        public static EntityAccessService<TModel> Instance()
+        {
+            return entityAccessServiceInstance ?? (entityAccessServiceInstance = new EntityAccessService<TModel>());
         }
 
         public ObservableCollection<TModel> SelectAll()
         {
-            ObservableCollection<TModel> models = new ObservableCollection<TModel>();
+            var models = new ObservableCollection<TModel>();
 
-            foreach (var item in unitOfWork.Repository<TModel>().GetAll())
+            foreach (TModel item in unitOfWork.Repository<TModel>().GetAll())
             {
                 models.Add(item);
             }
@@ -55,7 +62,7 @@ namespace XPence.Services.Implementation
 
         public void DeleteEntities(IEnumerable<TModel> entitiesToDelete)
         {
-            unitOfWork.Repository<TModel>().DeleteAll(entitiesToDelete);   
+            unitOfWork.Repository<TModel>().DeleteAll(entitiesToDelete);
         }
 
         public void Commit()
@@ -66,13 +73,12 @@ namespace XPence.Services.Implementation
             }
         }
 
-        public static bool Initialized { get; private set; }
+        public bool Initialized { get; private set; }
 
-        public static void Initialize()
+        public void Initialize()
         {
             if (!Initialized)
             {
-                unitOfWork = new UnitOfWork();
                 unitOfWork.Initialize();
                 Initialized = true;
             }
