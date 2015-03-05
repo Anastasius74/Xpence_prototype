@@ -11,7 +11,7 @@ namespace XPence.Services.Implementation
         private static EntityAccessService<TModel> entityAccessServiceInstance;
         private readonly UnitOfWork unitOfWork;
 
-        public EntityAccessService()
+        private EntityAccessService()
         {
             unitOfWork = new UnitOfWork();
             Initialize();

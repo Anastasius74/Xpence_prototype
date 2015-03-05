@@ -89,7 +89,6 @@
     <Compile Include="Controls\ImageCropperControl.cs" />
     <Compile Include="Controls\PuncturedRect.cs" />
     <Compile Include="Converters\AnimatedContentControl.cs" />
-    <Compile Include="Converters\ComponentHeaderConverter.cs" />
     <Compile Include="Converters\CroppingAdorner.cs" />
     <Compile Include="Converters\EmptyStringConverter.cs" />
     <Compile Include="Converters\FlyoutPositionConverter.cs" />
@@ -97,10 +96,8 @@
     <Compile Include="Converters\ImageCropperControl.cs" />
     <Compile Include="Converters\ImageToBinaryConverter.cs" />
     <Compile Include="Converters\InverseBoolConverter.cs" />
-    <Compile Include="Converters\NodeHeaderConverter.cs" />
     <Compile Include="Converters\NullToBoolConverter.cs" />
     <Compile Include="Converters\PuncturedRect.cs" />
-    <Compile Include="Converters\RoleHeaderConvertercs.cs" />
     <Compile Include="Converters\StringToColorConverter.cs" />
     <Compile Include="Converters\StringTrimmerConverter.cs" />
     <Compile Include="Converters\ToggleSwitchStateToStringConverter.cs" />

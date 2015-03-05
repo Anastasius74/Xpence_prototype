@@ -3,13 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
-             xmlns:converters="clr-namespace:XPence.Converters"
              xmlns:views="clr-namespace:XPence.Views">
-    <UserControl.Resources>
-        <!--Converters-->
-        <converters:NullToBoolConverter x:Key="nullToBool"/>
-        <converters:NodeHeaderConverter x:Key="headerTextConv"/>
-    </UserControl.Resources>
+    
     <apex:ApexGrid Rows="*,Auto,Auto" Columns="*,Auto" HorizontalAlignment="Stretch">
 
         <!--The grid-->
@@ -41,12 +36,7 @@
         </Border>
 
         <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <GroupBox Width="420" DataContext="{Binding SelectedNode, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
-                <GroupBox.Header>
-                    <MultiBinding Converter="{StaticResource headerTextConv}">
-                        <Binding Path="NetworkName"/>
-                    </MultiBinding>
-                </GroupBox.Header>
+            <GroupBox Width="420" Header="Node details" DataContext="{Binding SelectedNode, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
                 <views:NodeView/>
             </GroupBox>
         </DockPanel>

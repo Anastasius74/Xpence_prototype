@@ -81,12 +81,10 @@
     <Compile Include="Navigation\Navigator.cs" />
     <Compile Include="Navigation\NavigatorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RijndaelManagedEncryption.cs" />
     <Compile Include="Utility\AppConfigSettings.cs" />
     <Compile Include="Utility\AppConstants.cs" />
     <Compile Include="Utility\AppearanceManager.cs" />
     <Compile Include="Utility\LogUtil.cs" />
-    <Compile Include="Utility\TreeHelper.cs" />
     <Compile Include="Utility\Util.cs" />
   </ItemGroup>
   <ItemGroup>

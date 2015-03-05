@@ -66,10 +66,7 @@ namespace XPence.ViewModels
         /// </summary>
         public string ComponentLayer
         {
-            get
-            {
-                return ComponentEntity.Layer.Label;
-            }
+            get { return ComponentEntity.Layer.Label; }
             set
             {
                 ComponentEntity.Layer.Label = value;
@@ -93,14 +90,11 @@ namespace XPence.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the component module.
+        ///     Gets or sets the component module.
         /// </summary>
         public string ComponentModule
         {
-            get
-            {
-                return ComponentEntity.Module;
-            }
+            get { return ComponentEntity.Module; }
             set
             {
                 ComponentEntity.Module = value;

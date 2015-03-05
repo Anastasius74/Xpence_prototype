@@ -3,12 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
-             xmlns:converters="clr-namespace:XPence.Converters"
              xmlns:views="clr-namespace:XPence.Views">
-    <UserControl.Resources>
-        <!--Converters-->
-        <converters:RoleHeaderConverter x:Key="HeaderTextConv"/>
-    </UserControl.Resources>
+    
     <apex:ApexGrid Rows="*,Auto,Auto" Columns="*,Auto" HorizontalAlignment="Stretch">
 
         <!--The grid-->
@@ -40,12 +36,7 @@
         </Border>
 
         <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <GroupBox Width="420" DataContext="{Binding SelectedRole, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
-                <GroupBox.Header>
-                    <MultiBinding Converter="{StaticResource HeaderTextConv}">
-                        <Binding Path="Name"/>
-                    </MultiBinding>
-                </GroupBox.Header>
+            <GroupBox Width="420" Header="Role details" DataContext="{Binding SelectedRole, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
                 <views:RoleView/>
             </GroupBox>
         </DockPanel>

@@ -19,14 +19,19 @@ namespace XPence.ViewModels
         private ExtendedObservableCollection<ComponentViewModel> components;
         private ComponentViewModel selectedComponent;
         private ObservableCollection<ComponentViewModel> selectedComponents;
-        private readonly ObservableCollection<ComponentViewModel> copiedComponents;
-        private readonly EntityAccessService<Component> entityService; 
+        private ObservableCollection<ComponentViewModel> copiedComponents;
+        private EntityAccessService<Component> entityService; 
 
         public AllComponentViewModel(string registeredName, IMessagingService messagingService) : base(registeredName)
         {
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
+            Initialize();
+        }
+
+        private new void Initialize()
+        {
             entityService = EntityAccessService<Component>.Instance();
             Components = new ExtendedObservableCollection<ComponentViewModel>();
             copiedComponents = new ObservableCollection<ComponentViewModel>();
@@ -41,7 +46,7 @@ namespace XPence.ViewModels
             CopyCommand = new RelayCommand(CopyComponent, CanCopyComponent);
             PasteCommand = new RelayCommand(PasteComponent, CanPasteComponent);
 
-            Refresh();
+            GetComponents();
         }
 
         private bool CanPasteComponent()
@@ -134,7 +139,7 @@ namespace XPence.ViewModels
             }
         }
 
-        private void Refresh()
+        private void GetComponents()
         {
             Components.Clear();
             var list = entityService.SelectAll().Select(t => new ComponentViewModel(t));
@@ -145,7 +150,7 @@ namespace XPence.ViewModels
         {
             entityService.EnsureStartTransaction();
             entityService.Create(SelectedComponent.ComponentEntity);
-            Refresh();
+            GetComponents();
             messagingService.ShowMessage(InfoMessages.Inf_Mark_For_Create);
         }
 
@@ -183,7 +188,7 @@ namespace XPence.ViewModels
         {
             entityService.EnsureStartTransaction();
             entityService.Commit();
-            Refresh();
+            GetComponents();
             entityService.EnsureEndTransaction();
         }
 
@@ -220,7 +225,7 @@ namespace XPence.ViewModels
         /// <summary>
         ///     Gets the command to save a Component.
         /// </summary>
-        public ICommand SaveComponentCommand { get; private set; }
+        public ICommand SaveComponentCommand { get; set; }
 
         /// <summary>
         ///     Gets the command to create a new Component.

@@ -3,13 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:shared="clr-namespace:XPence.Shared;assembly=XPence.Shared"
-             xmlns:converters="clr-namespace:XPence.Converters"
              xmlns:views="clr-namespace:XPence.Views"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
-    <UserControl.Resources>
-        <!--Converters-->
-        <converters:ComponentHeaderConverter x:Key="HeaderTextConv"/>
-    </UserControl.Resources>
+    
     <apex:ApexGrid Rows="*,Auto,Auto" Columns="*,Auto" HorizontalAlignment="Stretch">
 
         <!--The grid-->
@@ -53,18 +49,7 @@
         </Border>
 
         <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <GroupBox Width="420"
-                      
-                      DataContext="{Binding SelectedComponent, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
-                <GroupBox.Header>
-                    <MultiBinding Converter="{StaticResource HeaderTextConv}">
-                        <Binding Path="ComponentName"/>
-                        <Binding Path="ComponentIsStorageOwner"/>
-                        <Binding Path="ComponentLayer"/>
-                        <Binding Path="ComponentCore"/>
-                        <Binding Path="ComponentModule"/>
-                    </MultiBinding>
-                </GroupBox.Header>
+            <GroupBox Width="420" Header="Component details" DataContext="{Binding SelectedComponent}" DockPanel.Dock="Top">
                 <views:ComponentView />
             </GroupBox>
         </DockPanel>
