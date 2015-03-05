@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ABB.AC800PEC.DbConfigTool.Views.AllRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:shared="clr-namespace:ABB.AC800PEC.DbConfigTool.Shared;assembly=ABB.AC800PEC.DbConfigTool.Shared"
+             xmlns:views="clr-namespace:ABB.AC800PEC.DbConfigTool.Views">
+    
+    <apex:ApexGrid Rows="*,Auto,Auto" Columns="*,Auto" HorizontalAlignment="Stretch">
+
+        <!--The grid-->
+        <DataGrid Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" SelectedItem="{Binding SelectedRole}"
+                      FontSize="14" ItemsSource="{Binding Roles}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Width="20" Binding="{Binding IsMarked}" />
+                <DataGridTextColumn Width="Auto"  Header="{x:Static shared:UIText.GRID_RoleName_HEADER_TEXT}" IsReadOnly="True" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--The button bar-->
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="50" Background="{StaticResource ButtonBarBackGroundBrush}">
+            <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="False">
+
+                <DockPanel.Resources>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MetroButtonStyle}">
+                        <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}"/>
+                        <Setter Property="DockPanel.Dock" Value="RIght"/>
+                    </Style>
+                </DockPanel.Resources>
+
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_NEW_Model}" Content="{StaticResource NewFigure}" Command="{Binding AddNewRoleCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_Update_Model}" Content="{StaticResource IncomeFigure}" Command="{Binding UpdateRoleCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_SAVE_Model}" Content="{StaticResource SaveFigure}" Command="{Binding SaveRoleCommand}"/>
+                <Button Width="40" Height="40" ToolTip="{x:Static shared:UIText.TP_DELETE_Models}" Content="{StaticResource DeleteFigure}" Command="{Binding DeleteRolesCommand}"/>
+            </DockPanel>
+        </Border>
+
+        <DockPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+            <GroupBox Width="420" Header="Role details" DataContext="{Binding SelectedRole, NotifyOnSourceUpdated=True,Mode=OneWay}" DockPanel.Dock="Top">
+                <views:RoleView/>
+            </GroupBox>
+        </DockPanel>
+
+    </apex:ApexGrid>
+</UserControl>

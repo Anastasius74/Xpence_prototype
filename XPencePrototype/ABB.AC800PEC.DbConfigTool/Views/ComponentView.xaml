@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ABB.AC800PEC.DbConfigTool.Views.ComponentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:apex="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:shared="clr-namespace:ABB.AC800PEC.DbConfigTool.Shared;assembly=ABB.AC800PEC.DbConfigTool.Shared">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="5,2,2,2"/>
+        </Style>
+        <DataTemplate DataType="{x:Type ValidationError}">
+            <TextBlock FontSize="{StaticResource ContentFontSize}"
+                                   FontFamily="{StaticResource ContentFontFamily}"
+                                   Foreground="{StaticResource ControlsValidationBrush}"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Top"
+                                   TextAlignment="Right"
+                                   Margin="0,0,0,2"
+                                   Text="{Binding Path=ErrorContent}"/>
+        </DataTemplate>
+
+
+    </UserControl.Resources>
+    <apex:ApexGrid Rows="Auto,20,Auto,20,Auto,20,Auto,20,Auto" Columns="Auto,Auto,Auto,Auto">
+
+        <!--ComponentName-->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Name_LABEL_TXT}"/>
+        <TextBox x:Name="CompName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Width="200"
+                     VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                     AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right"
+                              Width="200" Content="{Binding ElementName=CompName,Path=(Validation.Errors).CurrentItem}" />
+
+        <!--ComponentIsStorageOwner-->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static shared:UIText.COMP_IsStorageOwner_LABEL_TXT}"/>
+        <TextBox x:Name="CompIsStorageOwner" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentIsStorageOwner,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompIsStorageOwner,Path=(Validation.Errors).CurrentItem}" />
+
+
+        <!--ComponentLayer-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Layer_LABEL_TXT}"/>
+        <TextBox x:Name="CompLayer" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentLayer,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompLayer,Path=(Validation.Errors).CurrentItem}" />
+
+        <!--ComponentCore-->
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Core_LABEL_TXT}"/>
+        <TextBox x:Name="CompCore" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentCore,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompCore,Path=(Validation.Errors).CurrentItem}" />
+
+        <!--ComponentModule-->
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="{x:Static shared:UIText.COMP_Module_LABEL_TXT}"/>
+        <TextBox x:Name="CompModule" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"  Width="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Validation.ErrorTemplate="{x:Null}" Text="{Binding ComponentModule,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+        <ContentPresenter Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" Width="200" Content="{Binding ElementName=CompModule,Path=(Validation.Errors).CurrentItem}" />
+
+    </apex:ApexGrid>
+</UserControl>

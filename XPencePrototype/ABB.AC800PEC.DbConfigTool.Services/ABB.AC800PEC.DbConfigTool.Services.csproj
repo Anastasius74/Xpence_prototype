@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4273925-CD19-4797-950A-54103B4C031E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ABB.AC800PEC.DbConfigTool.Services</RootNamespace>
+    <AssemblyName>ABB.AC800PEC.DbConfigTool.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\EntityAccessService.cs" />
+    <Compile Include="Implementation\DatabaseInfoService.cs" />
+    <Compile Include="Interfaces\IEntityAccessService.cs" />
+    <Compile Include="Interfaces\IDatabaseInfoService.cs" />
+    <Compile Include="Interfaces\IMainWindowService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ABB.AC800PEC.DbConfigTool.DbAccess\ABB.AC800PEC.DbConfigTool.DbAccess.csproj">
+      <Project>{44850B92-97D5-49BE-988D-82C14E052355}</Project>
+      <Name>ABB.AC800PEC.DbConfigTool.DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ABB.AC800PEC.DbConfigTool.ExtensionMethods\ABB.AC800PEC.DbConfigTool.ExtensionMethods.csproj">
+      <Project>{fe9adc11-b85a-48a8-9a56-da22f410c82e}</Project>
+      <Name>ABB.AC800PEC.DbConfigTool.ExtensionMethods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ABB.AC800PEC.DbConfigTool.Framework\ABB.AC800PEC.DbConfigTool.Framework.csproj">
+      <Project>{5f5373ae-8a86-4931-8ee3-bcfd569f79ed}</Project>
+      <Name>ABB.AC800PEC.DbConfigTool.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ABB.AC800PEC.DbConfigTool.Infrastructure\ABB.AC800PEC.DbConfigTool.Infrastructure.csproj">
+      <Project>{B5506544-BBD8-4D5C-8C50-71A37454ED62}</Project>
+      <Name>ABB.AC800PEC.DbConfigTool.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ABB.AC800PEC.DbConfigTool.Models\ABB.AC800PEC.DbConfigTool.Models.csproj">
+      <Project>{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}</Project>
+      <Name>ABB.AC800PEC.DbConfigTool.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
