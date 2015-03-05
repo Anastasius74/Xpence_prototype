@@ -45,7 +45,6 @@
     <Compile Include="AllComponentViewModel.cs" />
     <Compile Include="AllNodeViewModel.cs" />
     <Compile Include="AllRoleViewModel.cs" />
-    <Compile Include="AppData.cs" />
     <Compile Include="ApplicationViewModel.cs" />
     <Compile Include="ComponentViewModel.cs" />
     <Compile Include="HelpViewModel.cs" />

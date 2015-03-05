@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace XPence.Models
@@ -13,7 +12,7 @@ namespace XPence.Models
         [Required]
         [Column("name")]
         public string Name { get; set; }
-
+       
         [Required]
         [Column("is_storage_owner")]
         public long IsStorageOwner { get; set; }

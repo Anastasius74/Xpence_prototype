@@ -11,7 +11,7 @@ namespace XPence.DbAccess.Implementations.Configuration
             HasKey(t => t.Id);
 
             //table  
-            ToTable("ComponentFunction");
+            ToTable("component_function");
 
         }
     }

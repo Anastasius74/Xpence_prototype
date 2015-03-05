@@ -106,9 +106,6 @@ namespace XPence.ViewModels
         protected override void OnInitialize()
         {
             Flyouts = new ObservableCollection<FlyoutViewModelBase>();
-            User user = new User {Name = Environment.UserName};
-
-            AppData.ApplicationUser = user;
             SetUserPreference();
             SelectedView.Initialize();
             messagingService.RegisterFlyout(SettingsView);

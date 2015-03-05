@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using XPence.Framework;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Models;
@@ -54,7 +53,10 @@ namespace XPence.ViewModels
         /// </summary>
         public string ComponentIsStorageOwner
         {
-            get { return String.Empty; }
+            get
+            {
+                return ComponentEntity.ComponentFunction == null ? string.Empty : ComponentEntity.ComponentFunction.Name;
+            }
             set
             {
                 ComponentEntity.ComponentFunction.Name = value;

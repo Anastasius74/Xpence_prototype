@@ -435,6 +435,7 @@ namespace XPence.DbAccess.Implementations
         {
             modelBuilder.Configurations.Add(new LayerMap());
             modelBuilder.Configurations.Add(new ComponentMap());
+            modelBuilder.Configurations.Add(new ComponentFunctionMap());
 
             base.OnModelCreating(modelBuilder);
         }

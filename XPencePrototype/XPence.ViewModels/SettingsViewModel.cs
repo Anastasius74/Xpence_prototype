@@ -130,8 +130,6 @@ namespace XPence.ViewModels
                 LogUtil.LogInfo("SettingsViewModel", "PromptUserToSaveAppearance", "User changed apperance.");
                 try
                 {
-                    AppData.ApplicationUser.SelectedAccent = SelectedAccent;
-                    AppData.ApplicationUser.SelectedTheme = SelectedTheme;
                     AppConfigSettings.UpdateAppSetting("AppThemeName", SelectedTheme);
                     AppConfigSettings.UpdateAppSetting("AccentName", SelectedAccent);
                 }
