@@ -238,6 +238,10 @@
       <Project>{b5506544-bbd8-4d5c-8c50-71a37454ed62}</Project>
       <Name>XPence.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XPence.Logging\XPence.Logging.csproj">
+      <Project>{27641638-9829-4E69-AAEB-55E65CFB3715}</Project>
+      <Name>XPence.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XPence.Shared\XPence.Shared.csproj">
       <Project>{35bc1af0-ee5f-4726-9016-57fa35fe5f05}</Project>
       <Name>XPence.Shared</Name>

@@ -8,6 +8,7 @@ using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.CoreClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Infrastructure.Utility;
+using XPence.Logging;
 using XPence.Models;
 
 namespace XPence.ViewModels

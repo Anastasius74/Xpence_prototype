@@ -2,7 +2,7 @@
 using log4net;
 using log4net.Config;
 
-namespace XPence.Infrastructure.Utility
+namespace XPence.Logging
 {
     /// <summary>
     /// A static utility clas that offers methods for loggings debug and exceptions details.

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,11 +22,13 @@ namespace XPence.Models
         [Column("is_storage_owner")]
         public long? IsStorageOwner { get; set; }
 
-        public static ComponentFunction CreatecomponentFunction(long id, long component, string name)
-        {
-            var componentFunction = new ComponentFunction {Id = id, Component = component, Name = name};
+        public virtual ICollection<Component> Components { get; set; }
 
-            return componentFunction;
-        }
+        //public static ComponentFunction CreatecomponentFunction(long id, long component, string name)
+        //{
+        //    var componentFunction = new ComponentFunction {Id = id, Component = component, Name = name};
+
+        //    return componentFunction;
+        //}
     }
 }

@@ -66,6 +66,10 @@
       <Project>{b5506544-bbd8-4d5c-8c50-71a37454ed62}</Project>
       <Name>XPence.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XPence.Logging\XPence.Logging.csproj">
+      <Project>{27641638-9829-4E69-AAEB-55E65CFB3715}</Project>
+      <Name>XPence.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XPence.Models\XPence.Models.csproj">
       <Project>{9FFFDA59-51D2-48A2-A093-16BDF2B6515F}</Project>
       <Name>XPence.Models</Name>

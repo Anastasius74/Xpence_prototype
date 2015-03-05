@@ -16,7 +16,7 @@ namespace XPence.ViewModels
         private readonly IMessagingService messagingService;
         private ExtendedObservableCollection<RoleViewModel> roles;
         private RoleViewModel selectedRole;
-        private readonly EntityAccessService<Role> entityService; 
+        private readonly EntityAccessService<Role> entityService;
 
         public AllRoleViewModel(string registeredName, IMessagingService messagingService)
             : base(registeredName)
@@ -24,7 +24,8 @@ namespace XPence.ViewModels
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
-            entityService = EntityAccessService<Role>.Instance();
+
+            entityService = new EntityAccessService<Role>();
             Roles = new ExtendedObservableCollection<RoleViewModel>();
 
             Refresh();

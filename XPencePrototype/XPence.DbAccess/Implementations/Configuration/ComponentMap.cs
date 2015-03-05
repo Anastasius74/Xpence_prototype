@@ -13,8 +13,11 @@ namespace XPence.DbAccess.Implementations.Configuration
             //table
             ToTable("Component");
 
-            //relationship
+            //relationship between Component and Layer
             HasRequired(c=>c.Layer).WithMany(l=>l.Components).HasForeignKey(c=>c.LayerId).WillCascadeOnDelete(false);
+
+            //relationship between Component and ComponentFunction
+            HasRequired(c => c.ComponentFunction).WithMany(l => l.Components).HasForeignKey(c => c.IsStorageOwner).WillCascadeOnDelete(false);
         }
     }
 }

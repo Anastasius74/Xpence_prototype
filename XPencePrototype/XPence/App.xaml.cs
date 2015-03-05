@@ -2,6 +2,7 @@
 using System.Windows.Threading;
 using XPence.Infrastructure.MessagingService;
 using XPence.Infrastructure.Utility;
+using XPence.Logging;
 using XPence.Shared;
 using XPence.ViewModels;
 using XPence.Views;

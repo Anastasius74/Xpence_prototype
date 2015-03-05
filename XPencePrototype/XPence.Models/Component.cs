@@ -30,6 +30,9 @@ namespace XPence.Models
         [ForeignKey("Id")]
         public virtual Layer Layer { get; set; }
 
+        [ForeignKey("Id")]
+        public virtual ComponentFunction ComponentFunction { get; set; }
+
         //public ICollection<Role> Roles { get; set; }
     }
 }

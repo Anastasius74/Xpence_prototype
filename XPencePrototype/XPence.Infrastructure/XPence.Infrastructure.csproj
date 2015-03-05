@@ -84,7 +84,6 @@
     <Compile Include="Utility\AppConfigSettings.cs" />
     <Compile Include="Utility\AppConstants.cs" />
     <Compile Include="Utility\AppearanceManager.cs" />
-    <Compile Include="Utility\LogUtil.cs" />
     <Compile Include="Utility\Util.cs" />
   </ItemGroup>
   <ItemGroup>

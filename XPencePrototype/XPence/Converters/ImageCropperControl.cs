@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using XPence.Infrastructure.Utility;
+using XPence.Logging;
 
 namespace XPence.Converters
 {

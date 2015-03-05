@@ -54,14 +54,6 @@ namespace XPence.DbAccess.Implementations
             IsInitialized = false;
         }
 
-        public static UnitOfWork GetInitialized()
-        {
-            var returnValue = new UnitOfWork();
-            returnValue.Initialize();
-            return returnValue;
-        }
-
-
         /// <summary>
         ///     Dispose the context.
         /// </summary>

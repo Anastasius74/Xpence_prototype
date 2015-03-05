@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using XPence.Infrastructure.BaseClasses;
 using XPence.Infrastructure.MessagingService;
 using XPence.Shared;
 using XPence.Infrastructure.Utility;
+using XPence.Logging;
 
 namespace XPence.ViewModels
 {

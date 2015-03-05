@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\Configuration\ComponentFunctionMap.cs" />
     <Compile Include="Implementations\Configuration\ComponentMap.cs" />
     <Compile Include="Implementations\Configuration\LayerMap.cs" />
     <Compile Include="Implementations\DatabaseInstanceManager.cs" />
@@ -79,6 +80,10 @@
     <ProjectReference Include="..\XPence.Framework\XPence.Framework.csproj">
       <Project>{5f5373ae-8a86-4931-8ee3-bcfd569f79ed}</Project>
       <Name>XPence.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XPence.Logging\XPence.Logging.csproj">
+      <Project>{27641638-9829-4E69-AAEB-55E65CFB3715}</Project>
+      <Name>XPence.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\XPence.Models\XPence.Models.csproj">
       <Project>{9fffda59-51d2-48a2-a093-16bdf2b6515f}</Project>

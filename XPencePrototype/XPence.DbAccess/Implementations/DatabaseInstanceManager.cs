@@ -3,6 +3,7 @@ using System.IO;
 using XPence.Framework;
 using XPence.Framework.DatabaseInfo;
 using XPence.Framework.XmlSerialization;
+using XPence.Logging;
 
 namespace XPence.DbAccess.Implementations
 {
@@ -22,6 +23,8 @@ namespace XPence.DbAccess.Implementations
         {
             try
             {
+                LogUtil.LogInfo("DatabaseInstanceManager", "CreateNewDatabaseStructure", "User created new database.");
+
                 var tempDatabaseName = ApplicationSettings.DatabaseTemporaryFileName;
                 var newDatabaseTemporaryDirectory = ApplicationSettings.DatabaseTemporaryDirectory;
                 var defaultDatabasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ApplicationSettings.DatabaseTemporaryRelativePath);
@@ -50,6 +53,7 @@ namespace XPence.DbAccess.Implementations
             }
             catch (Exception exception)
             {
+                LogUtil.LogError("DatabaseInstanceManager", "CreateNewDatabaseStructure", exception);
                 throw;
             }
         }

@@ -32,10 +32,10 @@ namespace XPence.ViewModels
 
         private new void Initialize()
         {
-            entityService = EntityAccessService<Component>.Instance();
             Components = new ExtendedObservableCollection<ComponentViewModel>();
             copiedComponents = new ObservableCollection<ComponentViewModel>();
             SelectedComponents = new ObservableCollection<ComponentViewModel>();
+            entityService = new EntityAccessService<Component>();
 
             //Initialize commands
             AddNewComponentCommand = new RelayCommand(CreateComponent, CanCreateComponent);

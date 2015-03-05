@@ -8,18 +8,12 @@ namespace XPence.Services.Implementation
 {
     public class EntityAccessService<TModel> : IEntityAccessService<TModel> where TModel : class
     {
-        private static EntityAccessService<TModel> entityAccessServiceInstance;
         private readonly UnitOfWork unitOfWork;
 
-        private EntityAccessService()
+        public EntityAccessService()
         {
             unitOfWork = new UnitOfWork();
             Initialize();
-        }
-
-        public static EntityAccessService<TModel> Instance()
-        {
-            return entityAccessServiceInstance ?? (entityAccessServiceInstance = new EntityAccessService<TModel>());
         }
 
         public ObservableCollection<TModel> SelectAll()

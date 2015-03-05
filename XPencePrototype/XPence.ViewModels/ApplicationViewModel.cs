@@ -57,7 +57,7 @@ namespace XPence.ViewModels
         {
             //Configure the navigator
             Navigator = NavigatorFactory.GetNavigator();
-
+            
             var viewList = new List<WorkspaceViewModelBase>
             {
                 new AllComponentViewModel(ApplicationConstants.AllComponentViewRegesteredName, messagingService),

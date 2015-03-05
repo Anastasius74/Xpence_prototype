@@ -24,7 +24,8 @@ namespace XPence.ViewModels
             if (messagingService == null)
                 throw new ArgumentNullException("messagingService");
             this.messagingService = messagingService;
-            entityService = EntityAccessService<Node>.Instance();
+
+            entityService = new EntityAccessService<Node>();
             Nodes = new ExtendedObservableCollection<NodeViewModel>();
             Refresh();
 
